@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.quizz.adapter.PreguntaAdapter
+import com.example.quizz.adapter.PreguntaProvider
 
 class ListadoPreguntas : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,9 +17,9 @@ class ListadoPreguntas : AppCompatActivity() {
     fun initRecyclerView() {
         val rv = findViewById<RecyclerView>(R.id.listado)
         rv.layoutManager = LinearLayoutManager(this)
-        val listadoPreguntas = PreguntasProvider
+        val listadoPreguntas = PreguntaProvider
         listadoPreguntas.setContext(this)
-        rv.adapter = PreguntasAdapter(listadoPreguntas.filllist())
+        rv.adapter = PreguntaAdapter(listadoPreguntas.filllist())
     }
 
 

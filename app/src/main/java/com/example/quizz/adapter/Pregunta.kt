@@ -1,13 +1,12 @@
 package com.example.quizz.adapter
 
-data class Pregunta(idPregunta: Int, pregunta: String, respuestas:Array<String>){
-    val idPregunta: Int
-    val pregunta: String
-    val respuestas: Array<String>
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-    init {
-        this.idPregunta = idPregunta
-        this.pregunta = pregunta
-        this.respuestas = respuestas
-    }
-}
+@Entity(tableName = "pregunta_tabla")
+data class Pregunta(
+    @PrimaryKey(autoGenerate = true)
+    val idPregunta: Int,
+    val pregunta: String,
+    val respuestas: Array<String>
+)
