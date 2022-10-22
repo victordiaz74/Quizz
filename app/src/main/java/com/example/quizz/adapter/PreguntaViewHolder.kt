@@ -3,6 +3,7 @@ package com.example.quizz.adapter
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.quizz.Pregunta
 import com.example.quizz.R
 
 class PreguntaViewHolder(view: View):RecyclerView.ViewHolder(view) {

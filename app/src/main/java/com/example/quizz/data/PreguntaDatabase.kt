@@ -1,9 +1,10 @@
-package com.example.quizz.adapter
+package com.example.quizz.data
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.quizz.Pregunta
 
 @Database(entities = [Pregunta::class], version = 1, exportSchema = false)
 abstract class PreguntaDatabase: RoomDatabase() {
@@ -14,7 +15,7 @@ abstract class PreguntaDatabase: RoomDatabase() {
         @Volatile
         private var INSTANCE: PreguntaDatabase? = null
 
-        fun getDatabase(context: Context): PreguntaDatabase{
+        fun getDatabase(context: Context): PreguntaDatabase {
             val temporal = INSTANCE
             //Comprobamos si existe y si existe se le devuelve sino creamos una nueva
             if(temporal != null){

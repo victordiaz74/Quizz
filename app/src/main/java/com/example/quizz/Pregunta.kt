@@ -1,4 +1,4 @@
-package com.example.quizz.adapter
+package com.example.quizz
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

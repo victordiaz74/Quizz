@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.quizz.adapter.PreguntaAdapter
-import com.example.quizz.adapter.PreguntaDatabase
-import com.example.quizz.adapter.PreguntaProvider
+import com.example.quizz.data.PreguntaDatabase
 
 class ListadoPreguntas : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
