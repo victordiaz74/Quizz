@@ -22,4 +22,5 @@ interface PreguntaDao {
 
     @Query("DELETE FROM pregunta_tabla WHERE idPregunta = :idPregunta")
     suspend fun borrarPreguntaPorId(idPregunta: Int)
+
 }

@@ -75,6 +75,7 @@ abstract class PreguntaDatabase: RoomDatabase() {
             preguntaDao.addPregunta(pregunta)
 
         }
+
     }
 
 }
