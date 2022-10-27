@@ -1,9 +1,10 @@
-package com.example.quizz
+package com.example.quizz.room
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.quizz.R
 import com.example.quizz.adapter.PreguntaAdapter
 
 class ListadoPreguntas : AppCompatActivity() {

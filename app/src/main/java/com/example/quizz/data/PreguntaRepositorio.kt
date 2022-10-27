@@ -2,6 +2,7 @@ package com.example.quizz.data
 
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
+import kotlinx.coroutines.flow.Flow
 
 class PreguntaRepositorio (private val preguntaDao: PreguntaDao){
 
