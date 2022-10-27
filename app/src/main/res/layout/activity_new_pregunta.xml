@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.05"
         tools:ignore="MissingConstraints">
 
-        <TextView
+        <EditText
             android:id="@+id/txtPregunta"
             android:layout_width="193dp"
             android:layout_height="44dp"
@@ -69,7 +69,7 @@
         app:layout_constraintVertical_bias="0.293"
         tools:ignore="MissingConstraints">
 
-        <TextView
+        <EditText
             android:id="@+id/txtRespuesta1"
             android:layout_width="193dp"
             android:layout_height="44dp"
@@ -113,7 +113,7 @@
         app:layout_constraintVertical_bias="0.45"
         tools:ignore="MissingConstraints">
 
-        <TextView
+        <EditText
             android:id="@+id/txtRespuesta2"
             android:layout_width="193dp"
             android:layout_height="44dp"
@@ -157,7 +157,7 @@
         app:layout_constraintVertical_bias="0.606"
         tools:ignore="MissingConstraints">
 
-        <TextView
+        <EditText
             android:id="@+id/txtRespuesta3"
             android:layout_width="193dp"
             android:layout_height="44dp"
@@ -201,7 +201,7 @@
         app:layout_constraintVertical_bias="0.756"
         tools:ignore="MissingConstraints">
 
-        <TextView
+        <EditText
             android:id="@+id/txtRespuesta4"
             android:layout_width="193dp"
             android:layout_height="44dp"

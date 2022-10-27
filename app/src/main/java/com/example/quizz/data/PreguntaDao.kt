@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
 
 
 @Dao
@@ -14,7 +15,7 @@ interface PreguntaDao {
     suspend fun addPregunta(pregunta: Pregunta)
 
     @Query("SELECT * FROM pregunta_tabla ORDER BY idPregunta ASC")
-    fun obtenerTodasLasPreguntas(): LiveData<List<Pregunta>>
+    fun obtenerTodasLasPreguntas(): Flow<List<Pregunta>>
 
     @Query("DELETE FROM pregunta_tabla")
     suspend fun borrarTodasLasPreguntas()

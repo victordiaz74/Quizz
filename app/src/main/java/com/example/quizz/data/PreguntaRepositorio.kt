@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 class PreguntaRepositorio (private val preguntaDao: PreguntaDao){
 
-    val todasLasPreguntas: LiveData<List<Pregunta>> = preguntaDao.obtenerTodasLasPreguntas()
+    val todasLasPreguntas: Flow<List<Pregunta>> = preguntaDao.obtenerTodasLasPreguntas()
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread

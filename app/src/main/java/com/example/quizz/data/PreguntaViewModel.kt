@@ -1,11 +1,12 @@
 package com.example.quizz.data
 
 import androidx.lifecycle.*
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 class PreguntaViewModel(private val repositorioPreguntas: PreguntaRepositorio): ViewModel() {
 
-    val todasLasPreguntas: LiveData<List<Pregunta>> = repositorioPreguntas.todasLasPreguntas.asLiveData()
+    val todasLasPreguntas: Flow<List<Pregunta>> = repositorioPreguntas.todasLasPreguntas
 
     fun insertarPregunta(pregunta: Pregunta) = viewModelScope.launch {
         repositorioPreguntas.addPregunta(pregunta)
