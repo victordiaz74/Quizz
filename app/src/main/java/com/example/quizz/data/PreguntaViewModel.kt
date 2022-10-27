@@ -1,31 +1,25 @@
 package com.example.quizz.data
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.viewModelScope
-import com.example.quizz.Pregunta
-import kotlinx.coroutines.Dispatchers
+import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 
-class PreguntaViewModel(application: Application): AndroidViewModel(application) {
+class PreguntaViewModel(private val repositorioPreguntas: PreguntaRepositorio): ViewModel() {
 
-    private val leerTodo: LiveData<List<Pregunta>>
-    private val repositorio: PreguntaRepositorio
+    val todasLasPreguntas: LiveData<List<Pregunta>> = repositorioPreguntas.todasLasPreguntas.asLiveData()
 
-    init {
-        val preguntaDao = PreguntaDatabase.getDatabase(application).preguntaDao()
-        repositorio = PreguntaRepositorio(preguntaDao)
-        leerTodo = repositorio.leerTodo
-
+    fun insertarPregunta(pregunta: Pregunta) = viewModelScope.launch {
+        repositorioPreguntas.addPregunta(pregunta)
     }
 
+}
 
-    fun añadirPregunta(pregunta: Pregunta){
-
-        viewModelScope.launch(Dispatchers.IO){
-            repositorio.añadirPregunta(pregunta)
+class PreguntaViewModelFactory(private val repositorioPreguntas: PreguntaRepositorio) :
+    ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(PreguntaViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return PreguntaViewModel(repositorioPreguntas) as T
         }
-
+        throw IllegalArgumentException("Unknown ViewModel class")
     }
 }

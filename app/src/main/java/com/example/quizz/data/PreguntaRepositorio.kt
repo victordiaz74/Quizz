@@ -1,15 +1,16 @@
 package com.example.quizz.data
 
+import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
-import com.example.quizz.Pregunta
 
 class PreguntaRepositorio (private val preguntaDao: PreguntaDao){
 
-    val leerTodo: LiveData<List<Pregunta>> = preguntaDao.leerTodo()
+    val todasLasPreguntas: LiveData<List<Pregunta>> = preguntaDao.obtenerTodasLasPreguntas()
 
-
-    suspend fun añadirPregunta(pregunta: Pregunta){
-        preguntaDao.añadirPregunta(pregunta)
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun addPregunta(pregunta: Pregunta){
+        preguntaDao.addPregunta(pregunta)
     }
 
 }

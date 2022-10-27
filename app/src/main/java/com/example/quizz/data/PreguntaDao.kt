@@ -3,16 +3,22 @@ package com.example.quizz.data
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.quizz.Pregunta
 
 
 @Dao
 interface PreguntaDao {
 
-    @Insert
-    fun añadirPregunta(pregunta: Pregunta)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun addPregunta(pregunta: Pregunta)
 
     @Query("SELECT * FROM pregunta_tabla ORDER BY idPregunta ASC")
-    fun leerTodo(): LiveData<List<Pregunta>>
+    fun obtenerTodasLasPreguntas(): LiveData<List<Pregunta>>
+
+    @Query("DELETE FROM pregunta_tabla")
+    suspend fun borrarTodasLasPreguntas()
+
+    @Query("DELETE FROM pregunta_tabla WHERE idPregunta = :idPregunta")
+    suspend fun borrarPreguntaPorId(idPregunta: Int)
 }
