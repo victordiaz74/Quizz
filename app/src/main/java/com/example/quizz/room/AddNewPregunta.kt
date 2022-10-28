@@ -1,4 +1,4 @@
-package com.example.quizz
+package com.example.quizz.room
 
 import android.app.Activity
 import android.content.Intent
@@ -8,6 +8,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.example.quizz.MainActivity
+import com.example.quizz.R
 
 class AddNewPregunta : AppCompatActivity(){
 

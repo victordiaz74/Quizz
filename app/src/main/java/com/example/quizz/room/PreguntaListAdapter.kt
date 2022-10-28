@@ -1,4 +1,4 @@
-package com.example.quizz
+package com.example.quizz.room
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.quizz.R
 import com.example.quizz.data.Pregunta
 
 class PreguntaListAdapter: ListAdapter<Pregunta, PreguntaListAdapter.PreguntaViewHolder>(WORDS_COMPARATOR) {

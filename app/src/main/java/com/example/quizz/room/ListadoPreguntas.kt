@@ -1,19 +1,15 @@
 package com.example.quizz.room
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.quizz.AddNewPregunta
 import com.example.quizz.MainActivity
 import com.example.quizz.PreguntaListAdapter
 import com.example.quizz.R
-import com.example.quizz.data.Pregunta
 import com.example.quizz.data.PreguntaViewModel
 import com.example.quizz.data.PreguntaViewModelFactory
 import kotlinx.coroutines.flow.observeOn
