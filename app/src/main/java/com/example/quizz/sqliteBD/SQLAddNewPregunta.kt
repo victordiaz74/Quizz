@@ -49,7 +49,7 @@ class SQLAddNewPregunta : AppCompatActivity(){
 
             preguntasDBHelper.crearPregunta(pregunta,respuesta1, respuesta2, respuesta3, respuesta4)
 
-            val cursor = preguntasDBHelper.obtenerNotas()
+            val cursor = preguntasDBHelper.obtenerPreguntas()
             miSQLiteRecyclerViewAdapter.SQLiteRecyclerViewAapter(this, cursor)
 
             miSQLiteRecyclerViewAdapter.notifyDataSetChanged()

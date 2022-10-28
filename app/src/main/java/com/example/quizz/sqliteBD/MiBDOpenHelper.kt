@@ -65,7 +65,7 @@ class MiBDOpenHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
         db.close()
     }
 
-    fun obtenerNotas(): Cursor {
+    fun obtenerPreguntas(): Cursor {
         val db= this.readableDatabase
         var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PREGUNTAS}", null)
         return cursor

@@ -32,9 +32,13 @@ class SQLListadoPreguntas: AppCompatActivity() {
     }
 
     fun initRecyclerView() {
+        preguntasDBHelper = MiBDOpenHelper(this, null)
+        val cursor = preguntasDBHelper.obtenerPreguntas()
+
+        miSQLiteRecyclerViewAdapter = PreguntaListAdapter()
+        miSQLiteRecyclerViewAdapter.SQLiteRecyclerViewAapter(this, cursor)
         val rv = findViewById<RecyclerView>(R.id.listado)
-        val adapter = PreguntaListAdapter()
-        rv.adapter = adapter
+        rv.adapter = miSQLiteRecyclerViewAdapter
         rv.layoutManager = LinearLayoutManager(this)
 
     }
