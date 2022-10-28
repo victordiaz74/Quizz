@@ -38,6 +38,7 @@ class SQLAddNewPregunta : AppCompatActivity(){
 
         val button = findViewById<Button>(R.id.btnAdd)
 
+        //inicializar preguntasBDHelper
         button.setOnClickListener {
             enviarPregunta()
         }
