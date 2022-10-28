@@ -18,17 +18,24 @@ class SQLAddNewPregunta : AppCompatActivity(){
     private lateinit var preguntasDBHelper: MiBDOpenHelper
     private lateinit var miSQLiteRecyclerViewAdapter: SQLPreguntaListAdapter
 
-    val editarTxtPregunta = findViewById<EditText>(R.id.txtPregunta)
-    val editarTxtRespuesta1 = findViewById<EditText>(R.id.txtRespuesta1)
-    val editarTxtRespuesta2 = findViewById<EditText>(R.id.txtRespuesta2)
-    val editarTxtRespuesta3 = findViewById<EditText>(R.id.txtRespuesta3)
-    val editarTxtRespuesta4 = findViewById<EditText>(R.id.txtRespuesta4)
+    lateinit var editarTxtPregunta: EditText
+    lateinit var editarTxtRespuesta1: EditText
+    lateinit var editarTxtRespuesta2: EditText
+    lateinit var editarTxtRespuesta3: EditText
+    lateinit var editarTxtRespuesta4: EditText
 
-    val button = findViewById<Button>(R.id.btnAdd)
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_pregunta)
+
+        editarTxtPregunta = findViewById<EditText>(R.id.txtPregunta)
+        editarTxtRespuesta1 = findViewById<EditText>(R.id.txtRespuesta1)
+        editarTxtRespuesta2 = findViewById<EditText>(R.id.txtRespuesta2)
+        editarTxtRespuesta3 = findViewById<EditText>(R.id.txtRespuesta3)
+        editarTxtRespuesta4 = findViewById<EditText>(R.id.txtRespuesta4)
+
+        val button = findViewById<Button>(R.id.btnAdd)
 
         button.setOnClickListener {
             enviarPregunta()
