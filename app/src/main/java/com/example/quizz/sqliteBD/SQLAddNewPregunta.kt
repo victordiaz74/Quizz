@@ -50,7 +50,7 @@ class SQLAddNewPregunta : AppCompatActivity(){
             preguntasDBHelper.crearPregunta(pregunta,respuesta1, respuesta2, respuesta3, respuesta4)
 
             val cursor = preguntasDBHelper.obtenerPreguntas()
-            miSQLiteRecyclerViewAdapter.SQLiteRecyclerViewAapter(this, cursor)
+            miSQLiteRecyclerViewAdapter.PreguntaListAdapter(this, cursor)
 
             miSQLiteRecyclerViewAdapter.notifyDataSetChanged()
             intent = Intent(this, SQLListadoPreguntas::class.java,).apply{

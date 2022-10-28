@@ -6,15 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.quizz.data.Pregunta
 
-class PreguntaListAdapter: RecyclerView.Adapter<PreguntaListAdapter.PreguntaViewHolder>() {
+class SQLPreguntaListAdapter: RecyclerView.Adapter<SQLPreguntaListAdapter.PreguntaViewHolder>() {
 
     private lateinit var context: Context
-    private var cursor: Cursor? = null
+    private lateinit var cursor: Cursor
 
-    fun SQLiteRecyclerViewAapter(context: Context, cursor: Cursor) {
+    fun SQLPreguntaListAdapter(context: Context, cursor: Cursor) {
         this.context = context
         this.cursor = cursor
     }
@@ -26,15 +27,15 @@ class PreguntaListAdapter: RecyclerView.Adapter<PreguntaListAdapter.PreguntaView
 
     override fun onBindViewHolder(holder: PreguntaViewHolder, position: Int) {
         cursor?.moveToPosition(position)
-        val pregunta1: Pregunta = Pregunta(cursor?.getInt(0)!!,
-            cursor?.getString(1)!!,
-            cursor?.getString(2)!!, cursor?.getString(3)!!, cursor?.getString(4)!!, cursor?.getString(5)!!
-        )
+        val pregunta1: Pregunta = Pregunta(cursor.getInt(0),
+            cursor.getString(1),
+            cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5))
         holder.render(pregunta1)
     }
 
     override fun getItemCount(): Int {
-        return cursor?.count!!
+        return cursor.count
+
     }
 
     class PreguntaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

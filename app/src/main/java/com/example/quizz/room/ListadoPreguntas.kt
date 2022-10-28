@@ -25,7 +25,7 @@ class ListadoPreguntas : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listado)
 
-        initRecyclerView()
+//        initRecyclerView()
 /*
         preguntaViewModel.todasLasPreguntas.observeOn(owner = this){
             preguntas ->
@@ -52,14 +52,14 @@ class ListadoPreguntas : AppCompatActivity() {
             ).show()
         }
     }*/
-
-    fun initRecyclerView() {
-        val rv = findViewById<RecyclerView>(R.id.listado)
-        val adapter = PreguntaListAdapter()
-        rv.adapter = adapter
-        rv.layoutManager = LinearLayoutManager(this)
-
-    }
+//
+//    fun initRecyclerView() {
+//        val rv = findViewById<RecyclerView>(R.id.listado)
+//        val adapter = PreguntaListAdapter()
+//        rv.adapter = adapter
+//        rv.layoutManager = LinearLayoutManager(this)
+//
+//    }
 
     fun btnVolver1(view: View){
         intent = Intent(this, MainActivity::class.java,).apply{
