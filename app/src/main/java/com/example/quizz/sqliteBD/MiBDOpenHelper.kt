@@ -52,9 +52,13 @@ class MiBDOpenHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
 
     }
 
-    fun crearPregunta(textoPregunta: String) {
+    fun crearPregunta(textoPregunta: String, textoRespuesta1: String, textoRespuesta2: String, textoRespuesta3: String, textoRespuesta4: String) {
         val data = ContentValues()
         data.put(COLUMNA_TEXTO,textoPregunta)
+        data.put(COLUMNA_RESPUESTA1, textoRespuesta1)
+        data.put(COLUMNA_RESPUESTA2, textoRespuesta2)
+        data.put(COLUMNA_RESPUESTA3, textoRespuesta3)
+        data.put(COLUMNA_RESPUESTA4, textoRespuesta4)
 
         val db= this.writableDatabase
         db.insert(TABLA_PREGUNTAS,null,data)
