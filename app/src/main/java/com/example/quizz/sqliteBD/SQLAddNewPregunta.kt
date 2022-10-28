@@ -10,13 +10,13 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.quizz.MainActivity
-import com.example.quizz.PreguntaListAdapter
 import com.example.quizz.R
+import com.example.quizz.SQLPreguntaListAdapter
 
 class SQLAddNewPregunta : AppCompatActivity(){
 
     private lateinit var preguntasDBHelper: MiBDOpenHelper
-    private lateinit var miSQLiteRecyclerViewAdapter: PreguntaListAdapter
+    private lateinit var miSQLiteRecyclerViewAdapter: SQLPreguntaListAdapter
 
     val editarTxtPregunta = findViewById<EditText>(R.id.txtPregunta)
     val editarTxtRespuesta1 = findViewById<EditText>(R.id.txtRespuesta1)
@@ -25,6 +25,7 @@ class SQLAddNewPregunta : AppCompatActivity(){
     val editarTxtRespuesta4 = findViewById<EditText>(R.id.txtRespuesta4)
 
     val button = findViewById<Button>(R.id.btnAdd)
+
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_pregunta)
@@ -50,7 +51,7 @@ class SQLAddNewPregunta : AppCompatActivity(){
             preguntasDBHelper.crearPregunta(pregunta,respuesta1, respuesta2, respuesta3, respuesta4)
 
             val cursor = preguntasDBHelper.obtenerPreguntas()
-            miSQLiteRecyclerViewAdapter.PreguntaListAdapter(this, cursor)
+            miSQLiteRecyclerViewAdapter.SQLPreguntaListAdapter(this, cursor)
 
             miSQLiteRecyclerViewAdapter.notifyDataSetChanged()
             intent = Intent(this, SQLListadoPreguntas::class.java,).apply{

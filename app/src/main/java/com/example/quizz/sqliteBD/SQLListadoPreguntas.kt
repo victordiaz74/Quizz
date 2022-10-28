@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.quizz.MainActivity
 import com.example.quizz.SQLPreguntaListAdapter
 import com.example.quizz.R
-import com.example.quizz.room.AddNewPregunta
 
 class SQLListadoPreguntas: AppCompatActivity() {
 
@@ -36,11 +35,12 @@ class SQLListadoPreguntas: AppCompatActivity() {
     fun initRecyclerView() {
         preguntasDBHelper = MiBDOpenHelper(this, null)
         val cursor = preguntasDBHelper.obtenerPreguntas()
-        //db = preguntasDBHelper.readableDatabase
-        //val cursor: Cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PREGUNTAS}", null)
+
         miSQLiteRecyclerViewAdapter = SQLPreguntaListAdapter()
         miSQLiteRecyclerViewAdapter.SQLPreguntaListAdapter(this, cursor)
+
         val rv = findViewById<RecyclerView>(R.id.listado)
+
         rv.setHasFixedSize(true)
         rv.layoutManager = LinearLayoutManager(this)
         rv.adapter = miSQLiteRecyclerViewAdapter

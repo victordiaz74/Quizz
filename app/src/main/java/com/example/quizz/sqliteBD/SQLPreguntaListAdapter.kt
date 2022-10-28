@@ -26,8 +26,8 @@ class SQLPreguntaListAdapter: RecyclerView.Adapter<SQLPreguntaListAdapter.Pregun
     }
 
     override fun onBindViewHolder(holder: PreguntaViewHolder, position: Int) {
-        cursor?.moveToPosition(position)
-        val pregunta1: Pregunta = Pregunta(cursor.getInt(0),
+        cursor.moveToPosition(position)
+        val pregunta1 = Pregunta(cursor.getInt(0),
             cursor.getString(1),
             cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5))
         holder.render(pregunta1)
