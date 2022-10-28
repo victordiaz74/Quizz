@@ -1,4 +1,4 @@
-package com.example.quizz.data
+package com.example.quizz.sqliteBD
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

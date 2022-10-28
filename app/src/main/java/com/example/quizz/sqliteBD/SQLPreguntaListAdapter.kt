@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.quizz.data.Pregunta
+import com.example.quizz.sqliteBD.Pregunta
 
 class SQLPreguntaListAdapter: RecyclerView.Adapter<SQLPreguntaListAdapter.PreguntaViewHolder>() {
 
@@ -27,7 +26,7 @@ class SQLPreguntaListAdapter: RecyclerView.Adapter<SQLPreguntaListAdapter.Pregun
 
     override fun onBindViewHolder(holder: PreguntaViewHolder, position: Int) {
         cursor.moveToPosition(position)
-        val pregunta1 = Pregunta(cursor.getInt(0),
+        val pregunta1: Pregunta = Pregunta(cursor.getInt(0),
             cursor.getString(1),
             cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5))
         holder.render(pregunta1)
