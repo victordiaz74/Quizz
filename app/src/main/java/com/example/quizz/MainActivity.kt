@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         }
         startActivity(intent)
     }
+
     fun btnAdd(view: View){
         intent = Intent(this, AddNewPregunta::class.java,).apply{
 

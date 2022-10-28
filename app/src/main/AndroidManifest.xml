@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Quizz"
         tools:targetApi="31">
         <activity
+            android:name=".AddNewPregunta"
+            android:exported="false" />
+        <activity
+            android:name=".room.ListadoPreguntas"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
