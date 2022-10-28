@@ -69,6 +69,7 @@ class MiBDOpenHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
         var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PREGUNTAS}", null)
         return cursor
     }
+
 }
 
 

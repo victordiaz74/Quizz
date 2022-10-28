@@ -2,6 +2,7 @@ package com.example.quizz.sqliteBD
 
 import android.app.Activity
 import android.content.Intent
+import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
@@ -15,8 +16,8 @@ import com.example.quizz.SQLPreguntaListAdapter
 
 class SQLAddNewPregunta : AppCompatActivity(){
 
-    private lateinit var preguntasDBHelper: MiBDOpenHelper
-    private lateinit var miSQLiteRecyclerViewAdapter: SQLPreguntaListAdapter
+    lateinit var preguntasDBHelper: MiBDOpenHelper
+    lateinit var miSQLiteRecyclerViewAdapter: SQLPreguntaListAdapter
 
     lateinit var editarTxtPregunta: EditText
     lateinit var editarTxtRespuesta1: EditText
@@ -55,16 +56,24 @@ class SQLAddNewPregunta : AppCompatActivity(){
             val respuesta3 = editarTxtRespuesta3.text.toString()
             val respuesta4 = editarTxtRespuesta4.text.toString()
 
-            preguntasDBHelper.crearPregunta(pregunta,respuesta1, respuesta2, respuesta3, respuesta4)
+            if(this::preguntasDBHelper.isInitialized) {
+                preguntasDBHelper.crearPregunta(
+                    pregunta,
+                    respuesta1,
+                    respuesta2,
+                    respuesta3,
+                    respuesta4
+                )
 
-            val cursor = preguntasDBHelper.obtenerPreguntas()
-            miSQLiteRecyclerViewAdapter.SQLPreguntaListAdapter(this, cursor)
+                val cursor = preguntasDBHelper.obtenerPreguntas()
+                miSQLiteRecyclerViewAdapter.SQLPreguntaListAdapter(this, cursor)
 
-            miSQLiteRecyclerViewAdapter.notifyDataSetChanged()
-            intent = Intent(this, SQLListadoPreguntas::class.java,).apply{
+                miSQLiteRecyclerViewAdapter.notifyDataSetChanged()
+                intent = Intent(this, SQLListadoPreguntas::class.java,).apply {
 
+                }
+                startActivity(intent)
             }
-            startActivity(intent)
         }
         finish()
     }

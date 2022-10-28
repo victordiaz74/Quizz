@@ -30,13 +30,13 @@
         <EditText
             android:id="@+id/txtPregunta"
             android:layout_width="193dp"
-            android:layout_height="44dp"
+            android:layout_height="48dp"
             android:layout_gravity="right|center_vertical"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:background="#99FFFF"
-            />
+            android:hint="introduce pregunta"
+            android:background="#99FFFF" />
 
         <TextView
             android:id="@+id/labelPregunta"
@@ -75,12 +75,13 @@
         <EditText
             android:id="@+id/txtRespuesta1"
             android:layout_width="193dp"
-            android:layout_height="44dp"
+            android:layout_height="48dp"
             android:layout_gravity="right|center_vertical"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:background="#99FFFF"/>
+            android:hint="introduce respuesta1"
+            android:background="#99FFFF" />
 
         <TextView
             android:id="@+id/labelRespuesta1"
@@ -119,12 +120,13 @@
         <EditText
             android:id="@+id/txtRespuesta2"
             android:layout_width="193dp"
-            android:layout_height="44dp"
+            android:layout_height="48dp"
             android:layout_gravity="right|center_vertical"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:background="#99FFFF"/>
+            android:hint="introduce respuesta2"
+            android:background="#99FFFF" />
 
         <TextView
             android:id="@+id/labelRespuesta2"
@@ -163,12 +165,13 @@
         <EditText
             android:id="@+id/txtRespuesta3"
             android:layout_width="193dp"
-            android:layout_height="44dp"
+            android:layout_height="48dp"
             android:layout_gravity="right|center_vertical"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:background="#99FFFF"/>
+            android:hint="introduce respuesta3"
+            android:background="#99FFFF" />
 
         <TextView
             android:id="@+id/labelRespuesta3"
@@ -207,12 +210,14 @@
         <EditText
             android:id="@+id/txtRespuesta4"
             android:layout_width="193dp"
-            android:layout_height="44dp"
+            android:layout_height="48dp"
             android:layout_gravity="right|center_vertical"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:background="#99FFFF"/>
+            android:background="#99FFFF"
+            android:hint="introduce respuesta4"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/labelRespuesta4"
