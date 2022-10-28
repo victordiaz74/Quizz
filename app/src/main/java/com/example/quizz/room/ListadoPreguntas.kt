@@ -30,15 +30,15 @@ class ListadoPreguntas : AppCompatActivity() {
         setContentView(R.layout.activity_listado)
 
         initRecyclerView()
-
+/*
         preguntaViewModel.todasLasPreguntas.observeOn(owner = this){
             preguntas ->
             pregunta.let{
                 adapter.submitList(it)
             }
-        }
+        }*/
     }
-
+/*
     override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
         super.onActivityResult(requestCode, resultCode, intentData)
 
@@ -55,7 +55,7 @@ class ListadoPreguntas : AppCompatActivity() {
                 Toast.LENGTH_LONG
             ).show()
         }
-    }
+    }*/
 
     fun initRecyclerView() {
         val rv = findViewById<RecyclerView>(R.id.listado)
