@@ -23,6 +23,9 @@ class SQLListadoPreguntas: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listado)
 
+        preguntasDBHelper = MiBDOpenHelper(this, null)
+        miSQLiteRecyclerViewAdapter = SQLPreguntaListAdapter()
+
         initRecyclerView()
         val btnAddPregunta : Button = findViewById(R.id.btnAddPregunta1)
         btnAddPregunta.setOnClickListener(){

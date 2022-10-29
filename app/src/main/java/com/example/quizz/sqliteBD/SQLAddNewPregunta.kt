@@ -38,7 +38,9 @@ class SQLAddNewPregunta : AppCompatActivity(){
 
         val button = findViewById<Button>(R.id.btnAdd)
 
-        //inicializar preguntasBDHelper
+        preguntasDBHelper = MiBDOpenHelper(this, null)
+        miSQLiteRecyclerViewAdapter = SQLPreguntaListAdapter()
+
         button.setOnClickListener {
             enviarPregunta()
         }
@@ -57,8 +59,7 @@ class SQLAddNewPregunta : AppCompatActivity(){
             val respuesta3 = editarTxtRespuesta3.text.toString()
             val respuesta4 = editarTxtRespuesta4.text.toString()
 
-            if(this::preguntasDBHelper.isInitialized) {
-                preguntasDBHelper.crearPregunta(
+            preguntasDBHelper.crearPregunta(
                     pregunta,
                     respuesta1,
                     respuesta2,
@@ -75,7 +76,6 @@ class SQLAddNewPregunta : AppCompatActivity(){
                 }
                 startActivity(intent)
             }
-        }
         finish()
     }
 
