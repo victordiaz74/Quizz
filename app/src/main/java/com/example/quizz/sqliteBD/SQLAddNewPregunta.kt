@@ -30,11 +30,11 @@ class SQLAddNewPregunta : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_pregunta)
 
-        editarTxtPregunta = findViewById<EditText>(R.id.txtPregunta)
-        editarTxtRespuesta1 = findViewById<EditText>(R.id.txtRespuesta1)
-        editarTxtRespuesta2 = findViewById<EditText>(R.id.txtRespuesta2)
-        editarTxtRespuesta3 = findViewById<EditText>(R.id.txtRespuesta3)
-        editarTxtRespuesta4 = findViewById<EditText>(R.id.txtRespuesta4)
+        editarTxtPregunta = findViewById<EditText>(R.id.textoPregunta)
+        editarTxtRespuesta1 = findViewById<EditText>(R.id.textoRespuesta1)
+        editarTxtRespuesta2 = findViewById<EditText>(R.id.textoRespuesta2)
+        editarTxtRespuesta3 = findViewById<EditText>(R.id.textoRespuesta3)
+        editarTxtRespuesta4 = findViewById<EditText>(R.id.textoRespuesta4)
 
         val button = findViewById<Button>(R.id.btnAdd)
 
