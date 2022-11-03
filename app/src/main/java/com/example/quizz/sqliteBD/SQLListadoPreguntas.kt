@@ -62,4 +62,12 @@ class SQLListadoPreguntas: AppCompatActivity() {
         intent = Intent(this, SQLAddNewPregunta::class.java)
         startActivity(intent)
     }
+
+    fun abrirPregunta(){
+        val idPregunta: String = R.id.txtPreguntaId.toString()
+        intent = Intent(this, SQLMostrarPregunta::class.java).apply {
+            intent.putExtra(idPregunta, "idPregunta")
+        }
+        startActivity(intent)
+    }
 }
