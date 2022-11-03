@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Quizz</string>
+    <string name="id_pregunta">id_pregunta</string>
 
     <string name="empty_not_saved">Esta vacia no se ha podido guardar</string>
 </resources>

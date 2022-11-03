@@ -6,14 +6,19 @@ import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.quizz.MainActivity
 import com.example.quizz.SQLPreguntaListAdapter
 import com.example.quizz.R
+const val EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE"
 
 class SQLListadoPreguntas: AppCompatActivity() {
+
+
+
 
     private lateinit var preguntasDBHelper: MiBDOpenHelper
     private lateinit var db: SQLiteDatabase
@@ -63,10 +68,12 @@ class SQLListadoPreguntas: AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun abrirPregunta(){
-        val idPregunta: String = R.id.txtPreguntaId.toString()
+    fun abrirPregunta(view: View){
+
+        var textView = findViewById<TextView>(R.id.txtPreguntaId)
+        var valor = textView.text.toString()
         intent = Intent(this, SQLMostrarPregunta::class.java).apply {
-            intent.putExtra(idPregunta, "idPregunta")
+            intent.putExtra(EXTRA_MESSAGE,valor)
         }
         startActivity(intent)
     }
