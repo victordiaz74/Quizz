@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
-        android:id="@+id/textoPreguntaId"
+        android:id="@+id/txtPreguntaId"
         android:layout_width="40dp"
         android:layout_height="120dp"
         android:gravity="center"
@@ -15,47 +15,47 @@
         tools:text="1" />
 
     <TextView
-        android:id="@+id/textoPregunta"
+        android:id="@+id/txtPregunta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="75px"
-        app:layout_constraintStart_toEndOf="@+id/textoPreguntaId"
+        app:layout_constraintStart_toEndOf="@+id/txtPreguntaId"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Pregunta" />
 
     <TextView
-        android:id="@+id/textoRespuesta1"
+        android:id="@+id/txtRespuesta1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="35px"
-        app:layout_constraintStart_toEndOf="@id/textoPreguntaId"
-        app:layout_constraintTop_toBottomOf="@id/textoPregunta"
+        app:layout_constraintStart_toEndOf="@id/txtPreguntaId"
+        app:layout_constraintTop_toBottomOf="@id/txtPregunta"
         tools:text="Respuesta1" />
 
     <TextView
-        android:id="@+id/textoRespuesta2"
+        android:id="@+id/txtRespuesta2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="35px"
-        app:layout_constraintStart_toEndOf="@id/textoPreguntaId"
-        app:layout_constraintTop_toBottomOf="@id/textoRespuesta1"
+        app:layout_constraintStart_toEndOf="@id/txtPreguntaId"
+        app:layout_constraintTop_toBottomOf="@id/txtRespuesta1"
         tools:text="Respuesta2" />
 
     <TextView
-        android:id="@+id/textoRespuesta3"
+        android:id="@+id/txtRespuesta3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="35px"
-        app:layout_constraintStart_toEndOf="@id/textoPreguntaId"
-        app:layout_constraintTop_toBottomOf="@id/textoRespuesta2"
+        app:layout_constraintStart_toEndOf="@id/txtPreguntaId"
+        app:layout_constraintTop_toBottomOf="@id/txtRespuesta2"
         tools:text="Respuesta3" />
 
     <TextView
-        android:id="@+id/textoRespuesta4"
+        android:id="@+id/txtRespuesta4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="35px"
-        app:layout_constraintStart_toEndOf="@id/textoPreguntaId"
-        app:layout_constraintTop_toBottomOf="@id/textoRespuesta3"
+        app:layout_constraintStart_toEndOf="@id/txtPreguntaId"
+        app:layout_constraintTop_toBottomOf="@id/txtRespuesta3"
         tools:text="Respuesta4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

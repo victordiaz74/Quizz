@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".room.AddNewPregunta"
+    tools:context=".sqliteBD.SQLAddNewPregunta"
     android:background="#FFDA9E"
     >
 
@@ -28,7 +28,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/txtPregunta"
+            android:id="@+id/textoPregunta"
             android:layout_width="193dp"
             android:layout_height="48dp"
             android:layout_gravity="right|center_vertical"
@@ -73,7 +73,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/txtRespuesta1"
+            android:id="@+id/textoRespuesta1"
             android:layout_width="193dp"
             android:layout_height="48dp"
             android:layout_gravity="right|center_vertical"
@@ -118,7 +118,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/txtRespuesta2"
+            android:id="@+id/textoRespuesta2"
             android:layout_width="193dp"
             android:layout_height="48dp"
             android:layout_gravity="right|center_vertical"
@@ -163,7 +163,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/txtRespuesta3"
+            android:id="@+id/textoRespuesta3"
             android:layout_width="193dp"
             android:layout_height="48dp"
             android:layout_gravity="right|center_vertical"
@@ -208,7 +208,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/txtRespuesta4"
+            android:id="@+id/textoRespuesta4"
             android:layout_width="193dp"
             android:layout_height="48dp"
             android:layout_gravity="right|center_vertical"
