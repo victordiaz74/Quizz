@@ -3,21 +3,20 @@ package com.example.quizz
 import android.content.Context
 import android.database.Cursor
 import android.view.LayoutInflater
+import android.view.View.OnClickListener
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.quizz.sqliteBD.PreguntasViewHolder
 
-class SQLPreguntaListAdapter: RecyclerView.Adapter<PreguntasViewHolder>() {
+class SQLPreguntaListAdapter(private var onClickListener: (String) -> Unit) : RecyclerView.Adapter<PreguntasViewHolder>() {
 
     private lateinit var context: Context
     private lateinit var cursor: Cursor
-    private lateinit var onItemClickListener: (String) -> Unit
-    private lateinit var onClickDelete: Unit
 
-    fun SQLPreguntaListAdapter(context: Context, cursor: Cursor, onItemClickListener: (String) -> Unit) {
+
+    fun SQLPreguntaListAdapter(context: Context, cursor: Cursor) {
         this.context = context
         this.cursor = cursor
-        this.onItemClickListener = onItemClickListener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PreguntasViewHolder {
@@ -27,7 +26,7 @@ class SQLPreguntaListAdapter: RecyclerView.Adapter<PreguntasViewHolder>() {
 
     override fun onBindViewHolder(holder: PreguntasViewHolder, position: Int) {
         cursor.moveToPosition(position)
-        holder.render(cursor.getInt(0), cursor.getString(1), onItemClickListener)
+        holder.render(cursor.getInt(0), cursor.getString(1), onClickListener)
 
     }
 

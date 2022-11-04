@@ -36,8 +36,6 @@ class SQLAddNewPregunta : AppCompatActivity(){
 
         val button = findViewById<Button>(R.id.btnAdd)
 
-        preguntasDBHelper = MiBDOpenHelper(this, null)
-        miSQLiteRecyclerViewAdapter = SQLPreguntaListAdapter()
 
         button.setOnClickListener {
             enviarPregunta()
@@ -66,7 +64,7 @@ class SQLAddNewPregunta : AppCompatActivity(){
                 )
 
                 val cursor = preguntasDBHelper.obtenerPreguntas()
-                miSQLiteRecyclerViewAdapter.SQLPreguntaListAdapter(this, cursor, onClickListener = {})
+                miSQLiteRecyclerViewAdapter.SQLPreguntaListAdapter(this, cursor)
 
                 miSQLiteRecyclerViewAdapter.notifyDataSetChanged()
                 intent = Intent(this, SQLListadoPreguntas::class.java,).apply {

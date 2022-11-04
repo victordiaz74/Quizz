@@ -9,20 +9,17 @@
         android:id="@+id/txtPreguntaId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="seleccionarItem"
         android:gravity="top"
         android:text="1"
         android:textSize="75px"
         android:background="@color/teal_200"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="OnClick" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtPregunta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="seleccionarItem"
         android:textSize="75px"
         android:background="@color/teal_700"
         app:layout_constraintStart_toEndOf="@+id/txtPreguntaId"

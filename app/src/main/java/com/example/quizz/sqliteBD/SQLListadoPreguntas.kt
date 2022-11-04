@@ -2,17 +2,14 @@ package com.example.quizz.sqliteBD
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.quizz.MainActivity
 import com.example.quizz.SQLPreguntaListAdapter
 import com.example.quizz.R
-const val EXTRA_MESSAGE = "com.example.quizz.sqliteBD.MESSAGE"
 
 class SQLListadoPreguntas: AppCompatActivity() {
 
@@ -24,7 +21,7 @@ class SQLListadoPreguntas: AppCompatActivity() {
         setContentView(R.layout.activity_listado)
 
         preguntasDBHelper = MiBDOpenHelper(this, null)
-        miSQLiteRecyclerViewAdapter = SQLPreguntaListAdapter()
+
 
         initRecyclerView()
         val btnAddPregunta : Button = findViewById(R.id.btnAddPregunta1)
@@ -38,10 +35,9 @@ class SQLListadoPreguntas: AppCompatActivity() {
         preguntasDBHelper = MiBDOpenHelper(this, null)
         val cursor = preguntasDBHelper.obtenerPreguntas()
 
-        miSQLiteRecyclerViewAdapter = SQLPreguntaListAdapter()
-        miSQLiteRecyclerViewAdapter.SQLPreguntaListAdapter(this,
-            cursor
-        ) { posicion -> seleccionarItem(view = findViewById(R.id.textoPregunta)) }
+        miSQLiteRecyclerViewAdapter=SQLPreguntaListAdapter( onClickListener = {posicion -> seleccionarItem(posicion)} )
+        miSQLiteRecyclerViewAdapter.SQLPreguntaListAdapter(this,cursor)
+
 
         val rv = findViewById<RecyclerView>(R.id.listado)
 
@@ -77,13 +73,11 @@ class SQLListadoPreguntas: AppCompatActivity() {
         startActivity(intent)
     }*/
 
-    fun seleccionarItem(view: View){
-        var textView = findViewById<TextView>(R.id.txtPreguntaId)
-        var valor = textView.text.toString()
+    fun seleccionarItem(posicion: String){
 
         intent = Intent(this, SQLMostrarPregunta::class.java).apply {
-            intent.putExtra(EXTRA_MESSAGE,valor)
-            Log.e("$valor", "valor de idPregunta = $valor")
+            intent.putExtra("idPregunta",posicion)
+
         }
 
         startActivity(intent)

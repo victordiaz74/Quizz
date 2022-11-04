@@ -11,13 +11,13 @@ class PreguntasViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val txtPreguntaId = itemView.findViewById<TextView>(R.id.txtPreguntaId)
     val txtPregunta = itemView.findViewById<TextView>(R.id.txtPregunta)
 
-    fun render(textoPreguntaId: Int, textoPregunta: String, onItemClickListener: (String) -> Unit) {
-        itemView.setOnClickListener{
-            onItemClickListener(txtPreguntaId.text.toString())
-        }
+    fun render(textoPreguntaId: Int, textoPregunta: String, onClickListener: (String) -> Unit) {
+
         txtPreguntaId.text = textoPreguntaId.toString()
         txtPregunta.text = textoPregunta
-
+        txtPregunta.setOnClickListener{
+            onClickListener(textoPreguntaId.toString())
+        }
     }
 
 

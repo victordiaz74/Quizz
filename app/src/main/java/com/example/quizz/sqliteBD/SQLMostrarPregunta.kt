@@ -29,7 +29,7 @@ class SQLMostrarPregunta : AppCompatActivity() {
         setContentView(R.layout.activity_mostrar_pregunta)
 
         preguntasDBHelper = MiBDOpenHelper(this, null)
-        idPregunta = intent.getStringExtra(EXTRA_MESSAGE).toString()
+        idPregunta = intent.getStringExtra("idPregunta").toString()
 
         textoPreguntaId = findViewById<TextView>(R.id.textoPreguntaId)
         textoPregunta = findViewById<TextView>(R.id.textoPreguntaCompleto)
