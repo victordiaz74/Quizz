@@ -15,16 +15,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun btnPreguntas(view: View){
-        intent = Intent(this, SQLListadoPreguntas::class.java).apply{
-
-        }
+        intent = Intent(this, SQLListadoPreguntas::class.java)
         startActivity(intent)
     }
 
     fun btnAdd(view: View){
-        intent = Intent(this, SQLAddNewPregunta::class.java).apply{
-
-        }
+        intent = Intent(this, SQLAddNewPregunta::class.java)
         startActivity(intent)
+    }
+
+    @Override
+    override fun onNewIntent(intent: Intent){
+        super.onNewIntent(intent)
+        setIntent(intent)
     }
 }

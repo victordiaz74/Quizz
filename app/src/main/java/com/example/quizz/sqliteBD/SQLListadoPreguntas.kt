@@ -50,9 +50,7 @@ class SQLListadoPreguntas: AppCompatActivity() {
     }
 
     fun btnVolver1(view: View){
-        intent = Intent(this, MainActivity::class.java).apply{
-
-        }
+        intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
 
@@ -61,26 +59,18 @@ class SQLListadoPreguntas: AppCompatActivity() {
         startActivity(intent)
     }
 
-    /*fun abrirPregunta(view: View){
-
-        var textView = findViewById<TextView>(R.id.txtPreguntaId)
-        var valor = textView.text.toString()
-
-        intent = Intent(this, SQLMostrarPregunta::class.java).apply {
-            intent.putExtra(EXTRA_MESSAGE,valor)
-            Log.e("$valor", "valor de idPregunta = $valor")
-        }
-
-        startActivity(intent)
-    }*/
-
     fun seleccionarItem(posicion: String){
 
         intent = Intent(this, SQLMostrarPregunta::class.java).apply {
-            intent.putExtra("idPregunta",posicion)
+            putExtra("id",posicion)
             Log.e("idPregunta", "idPregunta = $posicion")
-        }
 
+        }
         startActivity(intent)
+    }
+    @Override
+    override fun onNewIntent(intent: Intent){
+        super.onNewIntent(intent)
+        setIntent(intent)
     }
 }

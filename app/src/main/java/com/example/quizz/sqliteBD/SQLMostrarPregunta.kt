@@ -1,20 +1,19 @@
 package com.example.quizz.sqliteBD
 
 import android.content.Intent
-import android.database.Cursor
-
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.quizz.MainActivity
 import com.example.quizz.R
 
 class SQLMostrarPregunta : AppCompatActivity() {
 
-    private lateinit var idPregunta: String
     private lateinit var preguntasDBHelper: MiBDOpenHelper
+    private lateinit var idPregunta: String
 
     private lateinit var textoPreguntaId: TextView
     private lateinit var textoPregunta: TextView
@@ -23,13 +22,14 @@ class SQLMostrarPregunta : AppCompatActivity() {
     private lateinit var textoRespuesta3: TextView
     private lateinit var textoRespuesta4: TextView
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar_pregunta)
 
         preguntasDBHelper = MiBDOpenHelper(this, null)
-        idPregunta = intent.getStringExtra("idPregunta").toString()
+
+
+        idPregunta = intent.getStringExtra("id").toString()
 
         textoPreguntaId = findViewById<TextView>(R.id.textoPreguntaId)
         textoPregunta = findViewById<TextView>(R.id.textoPreguntaCompleto)
@@ -43,8 +43,8 @@ class SQLMostrarPregunta : AppCompatActivity() {
 
     }
 
-    fun consultarPregunta(idPreguntaGlobal:String){
-        val cursor = preguntasDBHelper.obtenerPreguntaId(idPreguntaGlobal)
+    fun consultarPregunta(idPregunta:String){
+        val cursor = preguntasDBHelper.obtenerPreguntaId(idPregunta)
 
         /*
         while (cursor.moveToNext()) {
