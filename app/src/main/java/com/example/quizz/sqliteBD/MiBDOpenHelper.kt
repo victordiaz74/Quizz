@@ -6,6 +6,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
+import android.os.Bundle
 import android.util.Log
 
 class MiBDOpenHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
@@ -26,6 +27,7 @@ class MiBDOpenHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
+
         try{
             var crearTablaPreguntas = "CREATE TABLE $TABLA_PREGUNTAS ($COLUMNA_ID INTEGER PRIMARY KEY AUTOINCREMENT, $COLUMNA_TEXTO TEXT, $COLUMNA_RESPUESTA1 TEXT," +
                     "$COLUMNA_RESPUESTA2 TEXT, $COLUMNA_RESPUESTA3 TEXT, $COLUMNA_RESPUESTA4 TEXT)"
@@ -71,8 +73,10 @@ class MiBDOpenHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
     }
 
     fun obtenerPreguntaId(idPregunta: String): Cursor {
+        Log.e("$idPregunta (onOpen)", "idPregunta que se le pasa a la consulta: $idPregunta")
         val db= this.readableDatabase
-        var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PREGUNTAS} WHERE $COLUMNA_ID=idPregunta", null)
+        var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PREGUNTAS} WHERE $COLUMNA_ID=$idPregunta", null)
+
         return cursor
     }
 

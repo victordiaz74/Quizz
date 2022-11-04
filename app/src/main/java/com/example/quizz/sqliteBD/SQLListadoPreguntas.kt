@@ -1,9 +1,8 @@
 package com.example.quizz.sqliteBD
 
 import android.content.Intent
-import android.database.Cursor
-import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -13,15 +12,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.quizz.MainActivity
 import com.example.quizz.SQLPreguntaListAdapter
 import com.example.quizz.R
-const val EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE"
+const val EXTRA_MESSAGE = "com.example.quizz.sqliteBD.MESSAGE"
 
 class SQLListadoPreguntas: AppCompatActivity() {
 
-
-
-
     private lateinit var preguntasDBHelper: MiBDOpenHelper
-    private lateinit var db: SQLiteDatabase
     private lateinit var miSQLiteRecyclerViewAdapter: SQLPreguntaListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +32,6 @@ class SQLListadoPreguntas: AppCompatActivity() {
             btnAddPregunta()
         }
 
-
     }
 
     fun initRecyclerView() {
@@ -45,7 +39,9 @@ class SQLListadoPreguntas: AppCompatActivity() {
         val cursor = preguntasDBHelper.obtenerPreguntas()
 
         miSQLiteRecyclerViewAdapter = SQLPreguntaListAdapter()
-        miSQLiteRecyclerViewAdapter.SQLPreguntaListAdapter(this, cursor)
+        miSQLiteRecyclerViewAdapter.SQLPreguntaListAdapter(this,
+            cursor
+        ) { posicion -> seleccionarItem(view = findViewById(R.id.textoPregunta)) }
 
         val rv = findViewById<RecyclerView>(R.id.listado)
 
@@ -68,13 +64,28 @@ class SQLListadoPreguntas: AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun abrirPregunta(view: View){
+    /*fun abrirPregunta(view: View){
 
         var textView = findViewById<TextView>(R.id.txtPreguntaId)
         var valor = textView.text.toString()
+
         intent = Intent(this, SQLMostrarPregunta::class.java).apply {
             intent.putExtra(EXTRA_MESSAGE,valor)
+            Log.e("$valor", "valor de idPregunta = $valor")
         }
+
+        startActivity(intent)
+    }*/
+
+    fun seleccionarItem(view: View){
+        var textView = findViewById<TextView>(R.id.txtPreguntaId)
+        var valor = textView.text.toString()
+
+        intent = Intent(this, SQLMostrarPregunta::class.java).apply {
+            intent.putExtra(EXTRA_MESSAGE,valor)
+            Log.e("$valor", "valor de idPregunta = $valor")
+        }
+
         startActivity(intent)
     }
 }

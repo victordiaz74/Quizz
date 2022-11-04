@@ -1,8 +1,6 @@
 package com.example.quizz.sqliteBD
 
-import android.app.Activity
 import android.content.Intent
-import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
@@ -68,7 +66,7 @@ class SQLAddNewPregunta : AppCompatActivity(){
                 )
 
                 val cursor = preguntasDBHelper.obtenerPreguntas()
-                miSQLiteRecyclerViewAdapter.SQLPreguntaListAdapter(this, cursor)
+                miSQLiteRecyclerViewAdapter.SQLPreguntaListAdapter(this, cursor, onClickListener = {})
 
                 miSQLiteRecyclerViewAdapter.notifyDataSetChanged()
                 intent = Intent(this, SQLListadoPreguntas::class.java,).apply {

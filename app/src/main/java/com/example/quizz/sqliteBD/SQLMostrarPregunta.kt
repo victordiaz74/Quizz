@@ -5,6 +5,7 @@ import android.database.Cursor
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import com.example.quizz.MainActivity
@@ -12,7 +13,7 @@ import com.example.quizz.R
 
 class SQLMostrarPregunta : AppCompatActivity() {
 
-    private var idPregunta = ""
+    private lateinit var idPregunta: String
     private lateinit var preguntasDBHelper: MiBDOpenHelper
 
     private lateinit var textoPreguntaId: TextView
@@ -28,7 +29,7 @@ class SQLMostrarPregunta : AppCompatActivity() {
         setContentView(R.layout.activity_mostrar_pregunta)
 
         preguntasDBHelper = MiBDOpenHelper(this, null)
-        idPregunta = getIntent().getStringExtra(EXTRA_MESSAGE).toString()
+        idPregunta = intent.getStringExtra(EXTRA_MESSAGE).toString()
 
         textoPreguntaId = findViewById<TextView>(R.id.textoPreguntaId)
         textoPregunta = findViewById<TextView>(R.id.textoPreguntaCompleto)
@@ -37,27 +38,30 @@ class SQLMostrarPregunta : AppCompatActivity() {
         textoRespuesta3 = findViewById<TextView>(R.id.textoRespuesta3Completo)
         textoRespuesta4 = findViewById<TextView>(R.id.textoRespuesta4Completo)
 
+        Log.e("$idPregunta", "idPregunta = $idPregunta")
         consultarPregunta(idPregunta)
 
     }
 
-    fun consultarPregunta(idPregunta:String){
-        val cursor = preguntasDBHelper.obtenerPreguntaId(idPregunta)
+    fun consultarPregunta(idPreguntaGlobal:String){
+        val cursor = preguntasDBHelper.obtenerPreguntaId(idPreguntaGlobal)
 
+        /*
         while (cursor.moveToNext()) {
             if (cursor.getInt(0).toString() == idPregunta )
                 break
+        }*/
+
+        if(cursor.count >= 1){
+            while (cursor.moveToNext()){
+                textoPreguntaId.text = cursor.getInt(0).toString()
+                textoPregunta.text = cursor.getString(1)
+                textoRespuesta1.text = cursor.getString(2)
+                textoRespuesta2.text = cursor.getString(3)
+                textoRespuesta3.text = cursor.getString(4)
+                textoRespuesta4.text = cursor.getString(5)
+            }
         }
-
-
-        //cursor.move(idPregunta.toInt())
-
-        textoPreguntaId.text = cursor.getInt(0).toString()
-        textoPregunta.text = cursor.getString(1)
-        textoRespuesta1.text = cursor.getString(2)
-        textoRespuesta2.text = cursor.getString(3)
-        textoRespuesta3.text = cursor.getString(4)
-        textoRespuesta4.text = cursor.getString(5)
 
         cursor.close()
     }

@@ -11,10 +11,13 @@ class SQLPreguntaListAdapter: RecyclerView.Adapter<PreguntasViewHolder>() {
 
     private lateinit var context: Context
     private lateinit var cursor: Cursor
+    private lateinit var onItemClickListener: (String) -> Unit
+    private lateinit var onClickDelete: Unit
 
-    fun SQLPreguntaListAdapter(context: Context, cursor: Cursor) {
+    fun SQLPreguntaListAdapter(context: Context, cursor: Cursor, onItemClickListener: (String) -> Unit) {
         this.context = context
         this.cursor = cursor
+        this.onItemClickListener = onItemClickListener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PreguntasViewHolder {
@@ -24,7 +27,8 @@ class SQLPreguntaListAdapter: RecyclerView.Adapter<PreguntasViewHolder>() {
 
     override fun onBindViewHolder(holder: PreguntasViewHolder, position: Int) {
         cursor.moveToPosition(position)
-        holder.render(cursor.getInt(0), cursor.getString(1),cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5))
+        holder.render(cursor.getInt(0), cursor.getString(1), onItemClickListener)
+
     }
 
     override fun getItemCount(): Int {
