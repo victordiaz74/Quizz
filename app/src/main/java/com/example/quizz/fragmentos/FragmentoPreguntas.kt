@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import com.example.quizz.R
 import com.example.quizz.databinding.FragmentFragmentoPreguntasBinding
 
 class FragmentoPreguntas : Fragment() {
@@ -27,12 +28,20 @@ class FragmentoPreguntas : Fragment() {
         binding = fragmentoBinding
 
         binding?.btnComprobar?.setOnClickListener{
-            val aux: Int = fragmentoViewModel.getMarcador().value ?: 0
-            fragmentoViewModel.getMarcador().setValue(aux + 1)
+            if(comprobarRespondido == true){
+                val aux: Int = fragmentoViewModel.getMarcador().value ?: 0
+                fragmentoViewModel.getMarcador().setValue(aux + 1)
+                fragmento.mostrarFragmentoRespuestas()
+            }else{
+
+            }
+
         }
         return  fragmentoBinding.root
 
     }
+
+
 
 
 }
