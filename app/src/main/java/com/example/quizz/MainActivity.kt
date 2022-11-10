@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.quizz.fragmentos.fragmento
 
 import com.example.quizz.sqliteBD.SQLAddNewPregunta
 import com.example.quizz.sqliteBD.SQLListadoPreguntas
@@ -12,6 +13,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+    }
+
+    fun btnStart(view: View){
+        intent = Intent(this, Fragmento::class.java)
+        startActivity(intent)
     }
 
     fun btnPreguntas(view: View){

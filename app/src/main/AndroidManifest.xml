@@ -12,11 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Quizz"
         tools:targetApi="31">
+
         <activity
             android:name=".sqliteBD.SQLMostrarPregunta"
+            android:exported="false"
             android:launchMode="singleTop"
-            android:parentActivityName=".sqliteBD.SQLListadoPreguntas"
-            android:exported="false"/>
+            android:parentActivityName=".sqliteBD.SQLListadoPreguntas" />
         <activity
             android:name=".sqliteBD.SQLAddNewPregunta"
             android:exported="false" />
