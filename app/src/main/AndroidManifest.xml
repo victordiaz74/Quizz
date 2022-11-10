@@ -13,10 +13,8 @@
         android:theme="@style/Theme.Quizz"
         tools:targetApi="31">
         <activity
-            android:name=".Fragmento"
-            android:exported="false"
-            android:label="@string/title_activity_fragmento"
-            android:theme="@style/Theme.Quizz.NoActionBar">
+            android:name=".fragmentos.Fragmento"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
