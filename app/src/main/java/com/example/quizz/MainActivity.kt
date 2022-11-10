@@ -4,8 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.quizz.fragmentos.fragmento
-
+import com.example.quizz.fragmentos.Fragmento
 import com.example.quizz.sqliteBD.SQLAddNewPregunta
 import com.example.quizz.sqliteBD.SQLListadoPreguntas
 

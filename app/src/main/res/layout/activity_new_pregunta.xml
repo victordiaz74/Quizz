@@ -204,7 +204,7 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.756"
+        app:layout_constraintVertical_bias="0.782"
         tools:ignore="MissingConstraints">
 
         <EditText
@@ -221,13 +221,13 @@
 
         <TextView
             android:id="@+id/labelRespuesta4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="87dp"
+            android:layout_height="33dp"
             android:layout_gravity="left|center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:text="Respuesta 4:"
+            android:text="Respuesta correcta:"
             android:textSize="15sp"
             android:textStyle="bold" />
 
