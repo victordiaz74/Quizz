@@ -16,7 +16,7 @@ class FragmentoPreguntas : Fragment() {
 
     private lateinit var preguntasDBHelper: MiBDOpenHelper
     private val fragmentoViewModel: FragmentoViewModel by activityViewModels()
-    private lateinit var binding: FragmentFragmentoPreguntasBinding
+    private var binding: FragmentFragmentoPreguntasBinding? = null
 
 
     //Es llamado cuando se crea el fragmento
@@ -33,7 +33,7 @@ class FragmentoPreguntas : Fragment() {
         val fragmentoBinding = FragmentFragmentoPreguntasBinding.inflate(inflater, container, false)
         binding = fragmentoBinding
 
-        binding.btnComprobar.setOnClickListener{
+        binding?.btnComprobar?.setOnClickListener{
             comprobarRespondido()
             mostrarFragmentoRespuestas()
 
@@ -43,7 +43,7 @@ class FragmentoPreguntas : Fragment() {
     }
 
     private fun comprobarRespondido() {
-        if (binding.grupoRespuestas.checkedRadioButtonId == -1){
+        if (binding?.grupoRespuestas?.checkedRadioButtonId == -1){
             Toast.makeText(this.context, "No has seleccionado ninguna respuesta", Toast.LENGTH_SHORT).show()
         }else{
 
@@ -53,22 +53,22 @@ class FragmentoPreguntas : Fragment() {
 
             val correcta = solucion.getString(5).toString()
 
-            if (binding.radiobtn1.isChecked && (binding.radiobtn1.text == correcta)){
+            if (binding?.radiobtn1?.isChecked == true && (binding?.radiobtn1?.text == correcta)){
                 Toast.makeText(this.context, "Has seleccionado la respuesta 1", Toast.LENGTH_SHORT).show()
                 val aux: Int = fragmentoViewModel.getMarcador().value ?: 0
                 fragmentoViewModel.getMarcador().setValue(aux + 1)
             }
-            else if (binding.radiobtn2.isChecked && (binding.radiobtn2.text == correcta)){
+            else if (binding?.radiobtn2?.isChecked == true && (binding?.radiobtn2?.text == correcta)){
                 Toast.makeText(this.context, "Has seleccionado la respuesta 2", Toast.LENGTH_SHORT).show()
                 val aux: Int = fragmentoViewModel.getMarcador().value ?: 0
                 fragmentoViewModel.getMarcador().setValue(aux + 1)
             }
-            else if (binding.radiobtn3.isChecked && (binding.radiobtn3.text == correcta)){
+            else if (binding?.radiobtn3?.isChecked == true && (binding?.radiobtn3?.text == correcta)){
                 Toast.makeText(this.context, "Has seleccionado la respuesta 3", Toast.LENGTH_SHORT).show()
                 val aux: Int = fragmentoViewModel.getMarcador().value ?: 0
                 fragmentoViewModel.getMarcador().setValue(aux + 1)
             }
-            else if (binding.radiobtn4.isChecked && (binding.radiobtn4.text == correcta)){
+            else if (binding?.radiobtn4?.isChecked == true && (binding?.radiobtn4?.text == correcta)){
                 Toast.makeText(this.context, "Has seleccionado la respuesta 4", Toast.LENGTH_SHORT).show()
                 val aux: Int = fragmentoViewModel.getMarcador().value ?: 0
                 fragmentoViewModel.getMarcador().setValue(aux + 1)

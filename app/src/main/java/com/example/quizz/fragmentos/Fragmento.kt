@@ -10,14 +10,14 @@ import com.example.quizz.sqliteBD.MiBDOpenHelper
 
 class Fragmento : AppCompatActivity() {
 
-    lateinit var binding: ActivityFragmentoBinding
+    private var binding: ActivityFragmentoBinding? = null
     private val fragmentoViewModel: FragmentoViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFragmentoBinding.inflate(layoutInflater)
 
-        setContentView(binding.root)
+        setContentView(binding?.root)
 
         mostrarFragmentoPreguntas()
 
@@ -29,7 +29,7 @@ class Fragmento : AppCompatActivity() {
 
         val nameObserver = Observer<Int>{
             //Actualizar la UI porque es un TextView
-            valor -> binding.textoPuntosMarcador.setText(valor.toString())
+            valor -> binding?.textoPuntosMarcador?.setText(valor.toString())
         }
 
         fragmentoViewModel.getMarcador().observe(this, nameObserver)
