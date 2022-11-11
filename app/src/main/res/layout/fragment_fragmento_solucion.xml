@@ -1,0 +1,190 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragmentos.FragmentoSolucion"
+    android:background="#FFDA9E"
+    >
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvTerminado"
+        android:layout_width="344dp"
+        android:layout_height="111dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#FF99CC"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.196"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textoTerminado"
+            android:layout_width="289dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="sans-serif-black"
+            android:text="HAS TERMINADO"
+            android:textSize="35dp" />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvAciertos"
+        android:layout_width="344dp"
+        android:layout_height="111dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#FFFF99"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.603"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/textoAciertos"
+            android:layout_width="125dp"
+            android:layout_height="48dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#99FFFF"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/labelAciertos"
+            android:layout_width="128dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:text="Aciertos:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvFallos"
+        android:layout_width="344dp"
+        android:layout_height="111dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#FFFF99"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.422"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/textoFallos"
+            android:layout_width="125dp"
+            android:layout_height="48dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#99FFFF"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/labelFallos"
+            android:layout_width="128dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:text="Fallos:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvPuntosTotales"
+        android:layout_width="344dp"
+        android:layout_height="111dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#FFFF99"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/textoPuntosTotales"
+            android:layout_width="125dp"
+            android:layout_height="48dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#99FFFF"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/labelPuntosTotales"
+            android:layout_width="126dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Puntos totales:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fbtnHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/logo_home90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

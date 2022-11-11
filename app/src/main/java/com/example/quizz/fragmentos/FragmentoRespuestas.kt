@@ -25,14 +25,54 @@ class FragmentoRespuestas : Fragment() {
 
         val fragmentoBinding = FragmentFragmentoRespuestasBinding.inflate(inflater, container, false)
         binding = fragmentoBinding
+
+        //paso vista de acierto o fallo
+        solucionRespuesta()
+
         binding?.btnSiguientePregunta?.setOnClickListener{
 
-            val aux: Int = fragmentoViewModel.getMarcador().value ?: 0
-            fragmentoViewModel.getMarcador().setValue(aux + 1)
-            mostrarFragmentoPreguntas()
+            //paso a la siguiente pregunta actualizando el marcador
+            siguiente()
 
         }
         return fragmentoBinding.root
+    }
+
+    private fun solucionRespuesta() {
+
+        if(fragmentoViewModel.getCorrecta()){
+            fragmentoViewModel.setMarcador()
+            binding?.textoRespuestaCorrecta?.text = "HAS ACERTADO!!"
+        }else{
+            binding?.textoRespuestaCorrecta?.text = "HAS FALLADO!!"
+        }
+
+    }
+
+    private fun siguiente() {
+
+        //en caso que sea la ultima pregunta de la base de datos muestra resumen del quizz
+        if(fragmentoViewModel.getTotalPreguntas() == fragmentoViewModel.getPreguntaActual()){
+            mostrarFragmentoSolucion()
+        }else{
+            fragmentoViewModel.setCorrecta(false)
+            mostrarFragmentoPreguntas()
+        }
+
+    }
+
+    private fun mostrarFragmentoSolucion() {
+
+        val transaction = fragmentManager?.beginTransaction()
+
+        val fragmentoSolucion = FragmentoSolucion()
+
+        transaction?.replace(R.id.fragmentContainerView, fragmentoSolucion)
+
+        transaction?.addToBackStack(null)
+        transaction?.commit()
+
+
     }
 
     private fun mostrarFragmentoPreguntas() {

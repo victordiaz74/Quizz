@@ -34,7 +34,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:background="#99FFFF"
-            tools:text="0" />
+            android:text="0" />
 
         <TextView
             android:id="@+id/textoMarcador"
@@ -46,7 +46,7 @@
             android:layout_marginBottom="20dp"
             android:textSize="20sp"
             android:textStyle="bold"
-            tools:text="Marcador:" />
+            android:text="Marcador:" />
 
 
     </androidx.cardview.widget.CardView>

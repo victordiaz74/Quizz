@@ -22,7 +22,6 @@ class FragmentoPreguntas : Fragment() {
     //Es llamado cuando se crea el fragmento
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        preguntasDBHelper = MiBDOpenHelper(this.context, null)
 
     }
 
@@ -39,15 +38,12 @@ class FragmentoPreguntas : Fragment() {
         binding?.btnComprobar?.setOnClickListener{
             comprobarRespondido()
 
-
         }
         return  fragmentoBinding.root
 
     }
 
     private fun cargar() {
-        Log.e("$preguntasDBHelper", "idPregunta que se le pasa a la consulta: $preguntasDBHelper")
-
         val pregunta = preguntasDBHelper.obtenerPreguntaId(fragmentoViewModel.getPreguntaActual().toString())
 
         binding?.textoPreguntas?.text = pregunta.getString(1)
@@ -62,8 +58,6 @@ class FragmentoPreguntas : Fragment() {
         if (binding?.grupoRespuestas?.checkedRadioButtonId == -1){
             Toast.makeText(this.context, "No has seleccionado ninguna respuesta", Toast.LENGTH_SHORT).show()
         }else{
-
-            Log.e("$preguntasDBHelper", "idPregunta que se le pasa a la consulta: $preguntasDBHelper")
 
             val solucion = preguntasDBHelper.obtenerPreguntaId(fragmentoViewModel.getPreguntaActual().toString())
 
@@ -88,10 +82,7 @@ class FragmentoPreguntas : Fragment() {
                 fragmentoViewModel.setCorrecta(true)
 
             }
-            else{
-                fragmentoViewModel.setCorrecta(false)
 
-            }
             fragmentoViewModel.setPreguntaActual()
 
             mostrarFragmentoRespuestas()
