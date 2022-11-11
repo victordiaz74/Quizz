@@ -52,7 +52,7 @@ class FragmentoRespuestas : Fragment() {
     private fun siguiente() {
 
         //en caso que sea la ultima pregunta de la base de datos muestra resumen del quizz
-        if(fragmentoViewModel.getTotalPreguntas() == fragmentoViewModel.getPreguntaActual()){
+        if(fragmentoViewModel.getTotalPreguntas()+1 == fragmentoViewModel.getPreguntaActual()){
             mostrarFragmentoSolucion()
         }else{
             fragmentoViewModel.setCorrecta(false)

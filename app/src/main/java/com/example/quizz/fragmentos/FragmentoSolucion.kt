@@ -29,7 +29,17 @@ class FragmentoSolucion : Fragment() {
         val fragmentoBinding = FragmentFragmentoSolucionBinding.inflate(inflater, container, false)
         binding = fragmentoBinding
 
+        cargarDatosFin()
+
         return fragmentoBinding.root
+    }
+
+    fun cargarDatosFin() {
+
+        binding?.textoAciertos?.text = fragmentoViewModel.aciertos.toString()
+
+        binding?.textoFallos?.text = (fragmentoViewModel.getTotalPreguntas() - fragmentoViewModel.aciertos).toString()
+
     }
 
 }

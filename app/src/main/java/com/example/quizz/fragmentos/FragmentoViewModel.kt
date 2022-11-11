@@ -12,7 +12,7 @@ class FragmentoViewModel : ViewModel() {
     private var preguntaActual = 1
     private var totalPreguntas:Int = 0
     private var correcta = false
-    private var aciertos = 0
+    var aciertos = 0
 
     init {
         marcador = MutableLiveData<Int>()
