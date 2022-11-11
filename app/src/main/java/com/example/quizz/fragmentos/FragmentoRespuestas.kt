@@ -29,10 +29,23 @@ class FragmentoRespuestas : Fragment() {
 
             val aux: Int = fragmentoViewModel.getMarcador().value ?: 0
             fragmentoViewModel.getMarcador().setValue(aux + 1)
+            mostrarFragmentoPreguntas()
 
         }
         return fragmentoBinding.root
     }
 
+    private fun mostrarFragmentoPreguntas() {
+
+        val transaction = fragmentManager?.beginTransaction()
+
+        val fragmentoPreguntas = FragmentoPreguntas()
+
+        transaction?.replace(R.id.fragmentContainerView, fragmentoPreguntas)
+
+        transaction?.addToBackStack(null)
+        transaction?.commit()
+
+    }
 
 }

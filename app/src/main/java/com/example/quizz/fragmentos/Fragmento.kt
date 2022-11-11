@@ -11,7 +11,6 @@ import com.example.quizz.sqliteBD.MiBDOpenHelper
 class Fragmento : AppCompatActivity() {
 
     lateinit var binding: ActivityFragmentoBinding
-
     private val fragmentoViewModel: FragmentoViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +20,7 @@ class Fragmento : AppCompatActivity() {
         setContentView(binding.root)
 
         mostrarFragmentoPreguntas()
-        mostrarFragmentoRespuestas()
+
 
         val base = MiBDOpenHelper(this, null)
         var cursor = base.obtenerPreguntas()
@@ -50,15 +49,7 @@ class Fragmento : AppCompatActivity() {
 
     }
 
-    private fun mostrarFragmentoRespuestas() {
 
-        val transaction= supportFragmentManager.beginTransaction()
-        val fragmentoRespuestas = FragmentoRespuestas()
-
-        transaction.replace(R.id.fragmentContainerView,fragmentoRespuestas)
-        transaction.addToBackStack(null)
-        transaction.commit()
-    }
 
 
 }
