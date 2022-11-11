@@ -16,13 +16,12 @@ class Fragmento : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFragmentoBinding.inflate(layoutInflater)
-
         setContentView(binding?.root)
 
         mostrarFragmentoPreguntas()
 
-
         val base = MiBDOpenHelper(this, null)
+        fragmentoViewModel.setDatabase(base)
         var cursor = base.obtenerPreguntas()
         fragmentoViewModel.setTotalPreguntas(cursor.count)
 

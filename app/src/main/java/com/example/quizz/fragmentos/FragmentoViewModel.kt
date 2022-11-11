@@ -8,19 +8,41 @@ import com.example.quizz.sqliteBD.MiBDOpenHelper
 class FragmentoViewModel : ViewModel() {
 
     private var marcador: MutableLiveData<Int>
-    private lateinit var preguntasDBHelper: MiBDOpenHelper
+    private var preguntasDBHelper: MiBDOpenHelper? = null
     private var preguntaActual = 0
     private var totalPreguntas = 0
+    private var correcta = false
 
     init {
         marcador = MutableLiveData<Int>()
     }
 
-    fun setMarcador(num: Int){
-        var valor = Integer.parseInt(marcador.toString())
-
-        //
+    fun setCorrecta(estado: Boolean)
+    {
+        this.correcta = estado
     }
+
+    fun getCorrecta(): Boolean
+    {
+        return correcta
+    }
+
+    fun setDatabase(b: MiBDOpenHelper)
+    {
+        this.preguntasDBHelper = b
+    }
+
+    fun getDatabase():MiBDOpenHelper?
+    {
+        return preguntasDBHelper
+    }
+
+    fun setMarcador(num: Int){
+        var aux: Int = marcador.value?: 0
+        marcador.setValue(aux + 1)
+
+    }
+
     fun getMarcador(): MutableLiveData<Int>{
         if(marcador == null){
 
