@@ -72,10 +72,12 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
     }
 
     fun obtenerPreguntaId(idPregunta: String): Cursor {
+        val num = (Integer.parseInt(idPregunta))
         Log.e("$idPregunta (onOpen)", "idPregunta que se le pasa a la consulta: $idPregunta")
-        val db= this.readableDatabase
-        var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PREGUNTAS} WHERE $COLUMNA_ID=$idPregunta", null)
 
+        val db= this.readableDatabase
+        var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PREGUNTAS} WHERE $COLUMNA_ID=$num", null)
+        cursor.moveToFirst()
         return cursor
     }
 

@@ -9,31 +9,27 @@ class FragmentoViewModel : ViewModel() {
 
     private var marcador: MutableLiveData<Int>
     private var preguntasDBHelper: MiBDOpenHelper? = null
-    private var preguntaActual = 0
-    private var totalPreguntas = 0
+    private var preguntaActual = 1
+    private var totalPreguntas:Int = 0
     private var correcta = false
 
     init {
         marcador = MutableLiveData<Int>()
     }
 
-    fun setCorrecta(estado: Boolean)
-    {
+    fun setCorrecta(estado: Boolean) {
         this.correcta = estado
     }
 
-    fun getCorrecta(): Boolean
-    {
+    fun getCorrecta(): Boolean {
         return correcta
     }
 
-    fun setDatabase(b: MiBDOpenHelper)
-    {
+    fun setDatabase(b: MiBDOpenHelper) {
         this.preguntasDBHelper = b
     }
 
-    fun getDatabase():MiBDOpenHelper?
-    {
+    fun getDatabase():MiBDOpenHelper? {
         return preguntasDBHelper
     }
 

@@ -38,15 +38,16 @@ class FragmentoPreguntas : Fragment() {
 
         binding?.btnComprobar?.setOnClickListener{
             comprobarRespondido()
-            mostrarFragmentoRespuestas()
+
 
         }
         return  fragmentoBinding.root
 
     }
 
-    private fun cargar()
-    {
+    private fun cargar() {
+        Log.e("$preguntasDBHelper", "idPregunta que se le pasa a la consulta: $preguntasDBHelper")
+
         val pregunta = preguntasDBHelper.obtenerPreguntaId(fragmentoViewModel.getPreguntaActual().toString())
 
         binding?.textoPreguntas?.text = pregunta.getString(1)
@@ -92,6 +93,8 @@ class FragmentoPreguntas : Fragment() {
 
             }
             fragmentoViewModel.setPreguntaActual()
+
+            mostrarFragmentoRespuestas()
         }
     }
 

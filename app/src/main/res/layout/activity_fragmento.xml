@@ -53,6 +53,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
+        android:name="com.example.quizz.fragmentos.FragmentoPreguntas"
         android:layout_width="410dp"
         android:layout_height="501dp"
         app:layout_constraintBottom_toBottomOf="parent"
