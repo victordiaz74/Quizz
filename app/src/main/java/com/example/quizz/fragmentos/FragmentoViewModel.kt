@@ -8,6 +8,7 @@ import com.example.quizz.sqliteBD.MiBDOpenHelper
 class FragmentoViewModel : ViewModel() {
 
     private var marcador: MutableLiveData<Int>
+    private lateinit var preguntasDBHelper: MiBDOpenHelper
     private var preguntaActual = 0
     private var totalPreguntas = 0
 
@@ -15,6 +16,11 @@ class FragmentoViewModel : ViewModel() {
         marcador = MutableLiveData<Int>()
     }
 
+    fun setMarcador(num: Int){
+        var valor = Integer.parseInt(marcador.toString())
+
+        //
+    }
     fun getMarcador(): MutableLiveData<Int>{
         if(marcador == null){
 

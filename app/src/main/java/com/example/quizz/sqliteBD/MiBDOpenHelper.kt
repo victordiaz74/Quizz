@@ -6,10 +6,9 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
-import android.os.Bundle
 import android.util.Log
 
-class MiBDOpenHelper(context: Context, factory: SQLiteDatabase.CursorFactory?):
+class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
     SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION) {
 
         val TAG = "SQLite"
