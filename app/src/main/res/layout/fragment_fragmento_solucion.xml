@@ -71,7 +71,9 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:background="#99FFFF"
-            android:text="0" />
+            android:textAlignment="center"
+            android:text="0"
+            tools:ignore="RtlCompat" />
 
         <TextView
             android:id="@+id/labelAciertos"
@@ -82,7 +84,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp"
             android:text="Aciertos:"
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
     </androidx.cardview.widget.CardView>
@@ -116,7 +118,9 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:background="#99FFFF"
-            android:text="0" />
+            android:textAlignment="center"
+            android:text="0"
+            tools:ignore="RtlCompat" />
 
         <TextView
             android:id="@+id/labelFallos"
@@ -127,7 +131,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp"
             android:text="Fallos:"
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
     </androidx.cardview.widget.CardView>

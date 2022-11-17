@@ -13,6 +13,7 @@ class FragmentoViewModel : ViewModel() {
     private var totalPreguntas:Int = 0
     private var correcta = false
     var aciertos = 0
+    var fallos = 0
 
     init {
         marcador = MutableLiveData<Int>()
@@ -21,6 +22,8 @@ class FragmentoViewModel : ViewModel() {
     fun setCorrecta(estado: Boolean) {
         if(estado == true){
             aciertos += 1
+        }else{
+            fallos += 1
         }
         this.correcta = estado
     }

@@ -38,7 +38,7 @@ class FragmentoSolucion : Fragment() {
 
         binding?.textoAciertos?.text = fragmentoViewModel.aciertos.toString()
 
-        binding?.textoFallos?.text = (fragmentoViewModel.getTotalPreguntas() - fragmentoViewModel.aciertos).toString()
+        binding?.textoFallos?.text = (fragmentoViewModel.fallos - fragmentoViewModel.aciertos).toString()
 
     }
 

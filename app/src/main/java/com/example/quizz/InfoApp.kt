@@ -8,18 +8,30 @@ import android.widget.Button
 
 class InfoApp : AppCompatActivity() {
 
-    lateinit var btnLink: Button
+    lateinit var btnAula: Button
     lateinit var url: String
+    lateinit var btnChollometro: Button
+    lateinit var urlChollometro: String
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info_app)
 
-        btnLink = findViewById(R.id.btnAula)
+        btnAula = findViewById(R.id.btnAula)
         url = "https://aulavirtual33.educa.madrid.org/ies.goya.madrid/"
+        btnChollometro = findViewById(R.id.btnChollometro)
+        urlChollometro = "https://www.chollometro.com/"
 
-        btnLink.setOnClickListener(){
+        btnAula.setOnClickListener(){
             var uri = Uri.parse(url)
+            intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
+        }
+
+        btnChollometro.setOnClickListener(){
+            var uri = Uri.parse(urlChollometro)
             intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
