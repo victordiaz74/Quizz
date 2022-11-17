@@ -53,6 +53,7 @@ class FragmentoRespuestas : Fragment() {
             binding?.textoRespuestaCorrecta?.text = "HAS FALLADO!!"
             binding?.layoutColor?.setBackgroundColor(Color.RED)
 
+
         }
 
     }

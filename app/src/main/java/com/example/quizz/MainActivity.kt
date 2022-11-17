@@ -29,6 +29,12 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun btnInfo(view: View){
+        intent = Intent(this, InfoApp::class.java)
+        startActivity(intent)
+    }
+
+
     @Override
     override fun onNewIntent(intent: Intent){
         super.onNewIntent(intent)
