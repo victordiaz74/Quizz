@@ -26,43 +26,4 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Pregunta" />
 
-    <TextView
-        android:id="@+id/txtRespuesta1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="35px"
-        android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@id/txtPreguntaId"
-        app:layout_constraintTop_toBottomOf="@id/txtPregunta"
-        tools:text="Respuesta1" />
-
-    <TextView
-        android:id="@+id/txtRespuesta2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="35px"
-        android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@id/txtPreguntaId"
-        app:layout_constraintTop_toBottomOf="@id/txtRespuesta1"
-        tools:text="Respuesta2" />
-
-    <TextView
-        android:id="@+id/txtRespuesta3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="35px"
-        android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@id/txtPreguntaId"
-        app:layout_constraintTop_toBottomOf="@id/txtRespuesta2"
-        tools:text="Respuesta3" />
-
-    <TextView
-        android:id="@+id/txtRespuesta4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="35px"
-        android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@id/txtPreguntaId"
-        app:layout_constraintTop_toBottomOf="@id/txtRespuesta3"
-        tools:text="Respuesta4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,10 @@
         android:theme="@style/Theme.Quizz"
         tools:targetApi="31">
         <activity
+            android:name=".sqliteBD.SQLAddRespuestas"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".fragmentos.Fragmento"
             android:exported="false">
             <meta-data

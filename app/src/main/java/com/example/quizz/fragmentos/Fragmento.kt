@@ -1,10 +1,13 @@
 package com.example.quizz.fragmentos
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import com.example.quizz.databinding.ActivityFragmentoBinding
 import androidx.lifecycle.Observer
+import com.example.quizz.MainActivity
 import com.example.quizz.sqliteBD.MiBDOpenHelper
 
 class Fragmento : AppCompatActivity() {
@@ -34,6 +37,13 @@ class Fragmento : AppCompatActivity() {
 
         fragmentoViewModel.getMarcador().observe(this, nameObserver)
 
+    }
+
+    fun btnVolver(view: View){
+        intent = Intent(this, MainActivity::class.java,).apply{
+
+        }
+        startActivity(intent)
     }
 
 }

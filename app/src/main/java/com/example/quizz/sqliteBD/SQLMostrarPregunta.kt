@@ -27,7 +27,6 @@ class SQLMostrarPregunta : AppCompatActivity() {
 
         preguntasDBHelper = MiBDOpenHelper(this, null)
 
-
         idPregunta = intent.getStringExtra("id").toString()
 
         textoPreguntaId = findViewById<TextView>(R.id.textoPreguntaId)
@@ -45,22 +44,14 @@ class SQLMostrarPregunta : AppCompatActivity() {
     fun consultarPregunta(idPregunta:String){
         val cursor = preguntasDBHelper.obtenerPreguntaId(idPregunta)
 
-        /*
-        while (cursor.moveToNext()) {
-            if (cursor.getInt(0).toString() == idPregunta )
-                break
-        }*/
+            textoPreguntaId.text = cursor.getInt(0).toString()
+            Log.e("$textoPreguntaId", "textoPreguntaID = $textoPreguntaId")
 
-        if(cursor.count >= 1){
-            while (cursor.moveToNext()){
-                textoPreguntaId.text = cursor.getInt(0).toString()
-                textoPregunta.text = cursor.getString(1)
-                textoRespuesta1.text = cursor.getString(2)
-                textoRespuesta2.text = cursor.getString(3)
-                textoRespuesta3.text = cursor.getString(4)
-                textoRespuesta4.text = cursor.getString(5)
-            }
-        }
+            textoPregunta.text = cursor.getString(1)
+            textoRespuesta1.text = cursor.getString(2)
+            textoRespuesta2.text = cursor.getString(3)
+            textoRespuesta3.text = cursor.getString(4)
+            textoRespuesta4.text = cursor.getString(5)
 
         cursor.close()
     }

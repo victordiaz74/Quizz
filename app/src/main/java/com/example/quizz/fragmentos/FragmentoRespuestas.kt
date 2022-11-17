@@ -1,5 +1,6 @@
 package com.example.quizz.fragmentos
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -43,8 +44,11 @@ class FragmentoRespuestas : Fragment() {
         if(fragmentoViewModel.getCorrecta()){
             fragmentoViewModel.setMarcador()
             binding?.textoRespuestaCorrecta?.text = "HAS ACERTADO!!"
+            binding?.layoutColor?.setBackgroundColor(Color.GREEN)
         }else{
             binding?.textoRespuestaCorrecta?.text = "HAS FALLADO!!"
+            binding?.layoutColor?.setBackgroundColor(Color.RED)
+
         }
 
     }

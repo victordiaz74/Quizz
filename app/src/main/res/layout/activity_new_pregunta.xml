@@ -21,10 +21,10 @@
         app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintVertical_bias="0.398"
         tools:ignore="MissingConstraints">
 
         <EditText
@@ -35,8 +35,8 @@
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:hint="introduce pregunta"
-            android:background="#99FFFF" />
+            android:background="#99FFFF"
+            android:hint="Introduce pregunta" />
 
         <TextView
             android:id="@+id/labelPregunta"
@@ -53,187 +53,6 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvRespuesta1"
-        android:layout_width="344dp"
-        android:layout_height="111dp"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#FF99CC"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.293"
-        tools:ignore="MissingConstraints">
-
-        <EditText
-            android:id="@+id/textoRespuesta1"
-            android:layout_width="193dp"
-            android:layout_height="48dp"
-            android:layout_gravity="right|center_vertical"
-            android:layout_margin="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:hint="introduce respuesta1"
-            android:background="#99FFFF" />
-
-        <TextView
-            android:id="@+id/labelRespuesta1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|center_horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:text="Respuesta 1:"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvRespuesta2"
-        android:layout_width="344dp"
-        android:layout_height="111dp"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#FF99CC"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45"
-        tools:ignore="MissingConstraints">
-
-        <EditText
-            android:id="@+id/textoRespuesta2"
-            android:layout_width="193dp"
-            android:layout_height="48dp"
-            android:layout_gravity="right|center_vertical"
-            android:layout_margin="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:hint="introduce respuesta2"
-            android:background="#99FFFF" />
-
-        <TextView
-            android:id="@+id/labelRespuesta2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|center_horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:text="Respuesta 2:"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvRespuesta3"
-        android:layout_width="344dp"
-        android:layout_height="111dp"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#FF99CC"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.606"
-        tools:ignore="MissingConstraints">
-
-        <EditText
-            android:id="@+id/textoRespuesta3"
-            android:layout_width="193dp"
-            android:layout_height="48dp"
-            android:layout_gravity="right|center_vertical"
-            android:layout_margin="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:hint="introduce respuesta3"
-            android:background="#99FFFF" />
-
-        <TextView
-            android:id="@+id/labelRespuesta3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left|center_horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:text="Respuesta 3:"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvRespuesta4"
-        android:layout_width="344dp"
-        android:layout_height="111dp"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#FF99CC"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.782"
-        tools:ignore="MissingConstraints">
-
-        <EditText
-            android:id="@+id/textoRespuesta4"
-            android:layout_width="193dp"
-            android:layout_height="48dp"
-            android:layout_gravity="right|center_vertical"
-            android:layout_margin="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="#99FFFF"
-            android:hint="introduce respuesta4"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/labelRespuesta4"
-            android:layout_width="87dp"
-            android:layout_height="33dp"
-            android:layout_gravity="left|center_horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:text="Respuesta correcta:"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-
-    </androidx.cardview.widget.CardView>
-
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
@@ -244,7 +63,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878" />
+        app:layout_constraintVertical_bias="0.768" />
 
     <Button
         android:id="@+id/btnVolver"
@@ -256,6 +75,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.903" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
