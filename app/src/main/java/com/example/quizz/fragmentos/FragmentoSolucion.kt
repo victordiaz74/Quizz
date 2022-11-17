@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import com.example.quizz.databinding.FragmentFragmentoSolucionBinding
@@ -44,7 +45,7 @@ class FragmentoSolucion : Fragment() {
             //si es menor la puntuacion maxima al numero de aciertos se cambia el valor en la base de datos
             puntuacionMax = fragmentoViewModel.aciertos
             preguntasDBHelper.crearPuntuacionMax(puntuacionMax.toString())
-            binding!!.textoNuevaPuntuacionMax.isVisible
+            binding!!.textoNuevaPuntuacionMax.setVisibility(TextView.VISIBLE)
         }
 
     }
