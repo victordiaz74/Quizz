@@ -24,7 +24,7 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
         val COLUMNA_RESPUESTA2 = "textoRespuesta2"
         val COLUMNA_RESPUESTA3 = "textoRespuesta3"
         val COLUMNA_RESPUESTA4 = "textoRespuesta4"
-        val COLUMNA_ID1 = "idPuntos"
+
         val COLUMNA_PTS_MAX = "puntuacionMax"
 
     }
@@ -35,7 +35,7 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
             var crearTablaPreguntas = "CREATE TABLE $TABLA_PREGUNTAS ($COLUMNA_ID INTEGER PRIMARY KEY AUTOINCREMENT, $COLUMNA_TEXTO TEXT, $COLUMNA_RESPUESTA1 TEXT," +
                     "$COLUMNA_RESPUESTA2 TEXT, $COLUMNA_RESPUESTA3 TEXT, $COLUMNA_RESPUESTA4 TEXT)"
             db!!.execSQL(crearTablaPreguntas)
-            var crearTalaPuntos = "CREATE TABLE $TABLA_PUNTUACIONES ($COLUMNA_ID1 INTEGER PRIMARY KEY AUTOINCREMENT, $COLUMNA_PTS_MAX TEXT)"
+            var crearTalaPuntos = "CREATE TABLE $TABLA_PUNTUACIONES ($COLUMNA_PTS_MAX TEXT)"
             db!!.execSQL(crearTalaPuntos)
         } catch (e: SQLiteException) {
             Log.e("$TAG (onCreate)", e.message.toString())
