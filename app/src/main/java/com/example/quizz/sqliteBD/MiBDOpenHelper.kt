@@ -17,12 +17,16 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
         val DATABASE_VERSION = 1
         val DATABASE_NAME = "preguntas_tabla.db"
         val TABLA_PREGUNTAS = "preguntas"
+        val TABLA_PUNTUACIONES = "puntuaciones"
         val COLUMNA_ID = "idPregunta"
         val COLUMNA_TEXTO = "textoPregunta"
         val COLUMNA_RESPUESTA1 = "textoRespuesta1"
         val COLUMNA_RESPUESTA2 = "textoRespuesta2"
         val COLUMNA_RESPUESTA3 = "textoRespuesta3"
         val COLUMNA_RESPUESTA4 = "textoRespuesta4"
+        val COLUMNA_ID1 = "idPuntos"
+        val COLUMNA_PTS_MAX = "puntuacionMax"
+
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
@@ -31,6 +35,8 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
             var crearTablaPreguntas = "CREATE TABLE $TABLA_PREGUNTAS ($COLUMNA_ID INTEGER PRIMARY KEY AUTOINCREMENT, $COLUMNA_TEXTO TEXT, $COLUMNA_RESPUESTA1 TEXT," +
                     "$COLUMNA_RESPUESTA2 TEXT, $COLUMNA_RESPUESTA3 TEXT, $COLUMNA_RESPUESTA4 TEXT)"
             db!!.execSQL(crearTablaPreguntas)
+            var crearTalaPuntos = "CREATE TABLE $TABLA_PUNTUACIONES ($COLUMNA_ID1 INTEGER PRIMARY KEY AUTOINCREMENT, $COLUMNA_PTS_MAX TEXT)"
+            db!!.execSQL(crearTalaPuntos)
         } catch (e: SQLiteException) {
             Log.e("$TAG (onCreate)", e.message.toString())
         }
@@ -65,6 +71,15 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
         db.close()
     }
 
+    fun crearPuntuacionMax(textoPuntuacionMax: String) {
+        val data = ContentValues()
+        data.put(COLUMNA_PTS_MAX,textoPuntuacionMax)
+
+        val db= this.writableDatabase
+        db.insert(TABLA_PUNTUACIONES,null,data)
+        db.close()
+    }
+
     fun obtenerPreguntas(): Cursor {
         val db= this.readableDatabase
         var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PREGUNTAS}", null)
@@ -78,6 +93,12 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
         val db= this.readableDatabase
         var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PREGUNTAS} WHERE $COLUMNA_ID=$num", null)
         cursor.moveToFirst()
+        return cursor
+    }
+
+    fun obtenerPuntuacionMax(): Cursor {
+        val db= this.readableDatabase
+        var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PUNTUACIONES} ORDER BY $COLUMNA_PTS_MAX desc LIMIT 1", null)
         return cursor
     }
 

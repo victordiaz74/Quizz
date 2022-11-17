@@ -51,6 +51,31 @@
             android:textStyle="bold"
             android:text="Marcador:" />
 
+        <EditText
+            android:id="@+id/textoPuntuacionMax"
+            android:layout_width="125dp"
+            android:layout_height="48dp"
+            android:layout_gravity="right"
+            android:layout_margin="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="#99FFFF"
+            android:text="0"
+            android:textAlignment="center"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/textoPuntuacionMaxLabel"
+            android:layout_width="128dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="10dp"
+            android:text="Puntuacion Maxima:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
 
     </androidx.cardview.widget.CardView>
 
