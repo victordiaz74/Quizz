@@ -25,6 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.05"
+        android:textAlignment="center"
         tools:ignore="MissingConstraints">
 
         <TextView
@@ -70,6 +71,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.293"
+        android:textAlignment="center"
         tools:ignore="MissingConstraints">
 
         <EditText
@@ -115,6 +117,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.45"
+        android:textAlignment="center"
         tools:ignore="MissingConstraints">
 
         <EditText
@@ -160,6 +163,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.606"
+        android:textAlignment="center"
         tools:ignore="MissingConstraints">
 
         <EditText
@@ -205,6 +209,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.782"
+        android:textAlignment="center"
         tools:ignore="MissingConstraints">
 
         <EditText

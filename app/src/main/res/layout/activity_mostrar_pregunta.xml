@@ -40,14 +40,16 @@
 
         <TextView
             android:id="@+id/textoPreguntaCompleto"
+            android:textSize="25dp"
             android:layout_width="265dp"
             android:layout_height="48dp"
-            android:layout_gravity="right|center_vertical"
+            android:layout_gravity="right"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-
-            android:background="#99FFFF" />
+            android:textAlignment="center"
+            android:background="#99FFFF"
+            tools:ignore="RtlCompat" />
 
 
     </androidx.cardview.widget.CardView>
@@ -73,14 +75,16 @@
 
         <TextView
             android:id="@+id/textoRespuesta1Completo"
+            android:textSize="25dp"
             android:layout_width="289dp"
             android:layout_height="48dp"
-            android:layout_gravity="right|center_vertical"
+            android:layout_gravity="right"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-
-            android:background="#99FFFF" />
+            android:textAlignment="center"
+            android:background="#99FFFF"
+            tools:ignore="RtlCompat" />
 
 
     </androidx.cardview.widget.CardView>
@@ -106,14 +110,16 @@
 
         <TextView
             android:id="@+id/textoRespuesta2Completo"
+            android:textSize="25dp"
             android:layout_width="289dp"
             android:layout_height="48dp"
             android:layout_gravity="right|center_vertical"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-
-            android:background="#99FFFF" />
+            android:textAlignment="center"
+            android:background="#99FFFF"
+            tools:ignore="RtlCompat" />
 
 
     </androidx.cardview.widget.CardView>
@@ -139,14 +145,16 @@
 
         <TextView
             android:id="@+id/textoRespuesta3Completo"
+            android:textSize="25dp"
             android:layout_width="289dp"
             android:layout_height="48dp"
             android:layout_gravity="right|center_vertical"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-
-            android:background="#99FFFF" />
+            android:textAlignment="center"
+            android:background="#99FFFF"
+            tools:ignore="RtlCompat" />
 
 
     </androidx.cardview.widget.CardView>
@@ -172,14 +180,16 @@
 
         <TextView
             android:id="@+id/textoRespuesta4Completo"
+            android:textSize="25dp"
             android:layout_width="289dp"
             android:layout_height="48dp"
             android:layout_gravity="right|center_vertical"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-
-            android:background="#99FFFF" />
+            android:textAlignment="center"
+            android:background="#99FFFF"
+            tools:ignore="RtlCompat" />
 
 
     </androidx.cardview.widget.CardView>

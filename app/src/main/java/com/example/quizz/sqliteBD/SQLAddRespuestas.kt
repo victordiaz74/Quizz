@@ -44,10 +44,10 @@ class SQLAddRespuestas : AppCompatActivity() {
             enviarPregunta()
         }
 
-
     }
 
     fun enviarPregunta(){
+
         if (TextUtils.isEmpty(editarTxtRespuesta1.text) || TextUtils.isEmpty(editarTxtRespuesta2.text)
             || TextUtils.isEmpty(editarTxtRespuesta3.text) || TextUtils.isEmpty(editarTxtRespuesta4.text)
         ) {
@@ -68,11 +68,6 @@ class SQLAddRespuestas : AppCompatActivity() {
                 respuesta4
             )
 
-            /*val cursor = preguntasDBHelper.obtenerPreguntas()
-
-            miSQLiteRecyclerViewAdapter.SQLPreguntaListAdapter(this, cursor)
-
-            miSQLiteRecyclerViewAdapter.notifyDataSetChanged()*/
             intent = Intent(this, SQLListadoPreguntas::class.java,).apply {
 
             }
@@ -80,10 +75,6 @@ class SQLAddRespuestas : AppCompatActivity() {
         }
         finish()
     }
-
-
-
-
 
     fun btnVolver(view: View){
         intent = Intent(this, MainActivity::class.java,).apply{

@@ -30,12 +30,14 @@
             android:id="@+id/textoPuntosMarcador"
             android:layout_width="125dp"
             android:layout_height="48dp"
-            android:layout_gravity="right|center_vertical"
+            android:layout_gravity="right"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:background="#99FFFF"
-            android:text="0" />
+            android:text="0"
+            android:textAlignment="center"
+            tools:ignore="RtlCompat" />
 
         <TextView
             android:id="@+id/textoMarcador"
