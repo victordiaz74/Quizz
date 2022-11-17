@@ -33,9 +33,12 @@ class Fragmento : AppCompatActivity() {
         val nameObserver = Observer<Int>{
             //Actualizar la UI porque es un TextView
             valor -> binding!!.textoPuntosMarcador?.setText(valor.toString())
+
         }
 
         fragmentoViewModel.getMarcador().observe(this, nameObserver)
+        var puntosMax = preguntasBDHelper.obtenerPuntuacionMax()
+        binding!!.textoPuntuacionMax.text = puntosMax.toString()
 
     }
 

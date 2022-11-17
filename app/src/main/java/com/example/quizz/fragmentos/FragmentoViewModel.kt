@@ -8,18 +8,15 @@ import com.example.quizz.sqliteBD.MiBDOpenHelper
 class FragmentoViewModel : ViewModel() {
 
     private var marcador: MutableLiveData<Int>
-    private var puntuacionMaxima: MutableLiveData<Int>
     private var preguntasDBHelper: MiBDOpenHelper? = null
     private var preguntaActual = 1
     private var totalPreguntas:Int = 0
     private var correcta = false
-    private var puntuacionMax = 0
     var aciertos = 0
     var fallos = 0
 
     init {
         marcador = MutableLiveData<Int>()
-        puntuacionMaxima = MutableLiveData<Int>()
     }
 
     fun setCorrecta(estado: Boolean) {
@@ -54,19 +51,6 @@ class FragmentoViewModel : ViewModel() {
 
         }
         return marcador
-    }
-
-    fun setPuntuacionMaxima(){
-        var aux: Int = puntuacionMax.value?: 0
-        puntuacionMax.setValue(aux + 1)
-
-    }
-
-    fun getPuntuacionMaxima(): MutableLiveData<Int>{
-        if(puntuacionMax == null){
-
-        }
-        return puntuacionMax
     }
 
     fun setPreguntaActual(){

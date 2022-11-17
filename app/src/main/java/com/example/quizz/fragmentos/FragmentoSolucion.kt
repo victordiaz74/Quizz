@@ -5,14 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
-import com.example.quizz.R
-import com.example.quizz.databinding.FragmentFragmentoRespuestasBinding
 import com.example.quizz.databinding.FragmentFragmentoSolucionBinding
+import com.example.quizz.sqliteBD.MiBDOpenHelper
 
 
 class FragmentoSolucion : Fragment() {
 
+    private lateinit var preguntasDBHelper: MiBDOpenHelper
     private val fragmentoViewModel: FragmentoViewModel by activityViewModels()
     private var binding: FragmentFragmentoSolucionBinding? = null
 
@@ -30,8 +31,22 @@ class FragmentoSolucion : Fragment() {
         binding = fragmentoBinding
 
         cargarDatosFin()
+        comprobarPuntuacionMax()
 
         return fragmentoBinding.root
+    }
+
+    private fun comprobarPuntuacionMax() {
+
+        //compruebo la puntuacion maxima
+        var puntuacionMax = preguntasDBHelper.obtenerPuntuacionMax()
+        if(puntuacionMax < fragmentoViewModel.aciertos){
+            //si es menor la puntuacion maxima al numero de aciertos se cambia el valor en la base de datos
+            puntuacionMax = fragmentoViewModel.aciertos
+            preguntasDBHelper.crearPuntuacionMax(puntuacionMax.toString())
+            binding!!.textoNuevaPuntuacionMax.isVisible
+        }
+
     }
 
     fun cargarDatosFin() {

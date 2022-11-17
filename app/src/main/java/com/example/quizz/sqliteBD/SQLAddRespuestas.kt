@@ -11,8 +11,6 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.quizz.MainActivity
 import com.example.quizz.R
-import com.example.quizz.SQLPreguntaListAdapter
-import com.example.quizz.sqliteBD.MiBDOpenHelper
 
 class SQLAddRespuestas : AppCompatActivity() {
 

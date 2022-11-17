@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
+import com.example.quizz.fragmentos.FragmentoSolucion
 
 class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
     SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION) {
@@ -35,8 +36,8 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
             var crearTablaPreguntas = "CREATE TABLE $TABLA_PREGUNTAS ($COLUMNA_ID INTEGER PRIMARY KEY AUTOINCREMENT, $COLUMNA_TEXTO TEXT, $COLUMNA_RESPUESTA1 TEXT," +
                     "$COLUMNA_RESPUESTA2 TEXT, $COLUMNA_RESPUESTA3 TEXT, $COLUMNA_RESPUESTA4 TEXT)"
             db!!.execSQL(crearTablaPreguntas)
-            var crearTalaPuntos = "CREATE TABLE $TABLA_PUNTUACIONES ($COLUMNA_PTS_MAX TEXT)"
-            db!!.execSQL(crearTalaPuntos)
+            var crearTablaPuntos = "CREATE TABLE $TABLA_PUNTUACIONES ($COLUMNA_PTS_MAX TEXT)"
+            db!!.execSQL(crearTablaPuntos)
         } catch (e: SQLiteException) {
             Log.e("$TAG (onCreate)", e.message.toString())
         }
@@ -46,6 +47,8 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
         try {
             val dropTablaPregunta = "DROP TABLE IF EXISTS $TABLA_PREGUNTAS"
             db!!.execSQL(dropTablaPregunta)
+            val dropTablaPuntuaciones = "DROP TABLE IF EXISTS $TABLA_PUNTUACIONES"
+            db!!.execSQL(dropTablaPuntuaciones)
             onCreate(db)
         } catch (e: SQLiteException) {
             Log.e("$TAG (onUpgrade)", e.message.toString())
@@ -92,14 +95,17 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
 
         val db= this.readableDatabase
         var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PREGUNTAS} WHERE $COLUMNA_ID=$num", null)
+        Log.e("$cursor", "valor del cursor que se le pasa a la consulta: $cursor")
         cursor.moveToFirst()
         return cursor
     }
 
-    fun obtenerPuntuacionMax(): Cursor {
+    fun obtenerPuntuacionMax(): Int {
         val db= this.readableDatabase
         var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PUNTUACIONES} ORDER BY $COLUMNA_PTS_MAX desc LIMIT 1", null)
-        return cursor
+        Log.e("$cursor", "valor del cursor que se le pasa a la consulta: $cursor")
+        cursor.moveToFirst()
+        return cursor.getInt(1)
     }
 
 }
