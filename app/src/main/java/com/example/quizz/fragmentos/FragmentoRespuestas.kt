@@ -2,6 +2,8 @@ package com.example.quizz.fragmentos
 
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -32,8 +34,10 @@ class FragmentoRespuestas : Fragment() {
 
         binding?.btnSiguientePregunta?.setOnClickListener{
 
-            //paso a la siguiente pregunta actualizando el marcador
-            siguiente()
+            //paso a la siguiente pregunta actualizando el marcador y con delay de 3s
+            Handler(Looper.getMainLooper()).postDelayed({
+                siguiente()
+            }, 3000)
 
         }
         return fragmentoBinding.root
