@@ -41,10 +41,11 @@ class FragmentoSolucion : Fragment() {
 
         //compruebo la puntuacion maxima
         var puntuacionMax = preguntasDBHelper.obtenerPuntuacionMax()
-        if(puntuacionMax < fragmentoViewModel.aciertos){
+        var puntuacionMaxima = puntuacionMax.getInt(0)
+        if(puntuacionMaxima < fragmentoViewModel.aciertos){
             //si es menor la puntuacion maxima al numero de aciertos se cambia el valor en la base de datos
-            puntuacionMax = fragmentoViewModel.aciertos
-            preguntasDBHelper.crearPuntuacionMax(puntuacionMax.toString())
+            puntuacionMaxima = fragmentoViewModel.aciertos
+            preguntasDBHelper.crearPuntuacionMax(puntuacionMaxima.toString())
             binding!!.textoNuevaPuntuacionMax.setVisibility(TextView.VISIBLE)
         }
 

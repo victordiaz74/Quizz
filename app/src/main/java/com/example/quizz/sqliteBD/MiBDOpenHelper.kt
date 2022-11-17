@@ -100,12 +100,12 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
         return cursor
     }
 
-    fun obtenerPuntuacionMax(): Int {
+    fun obtenerPuntuacionMax(): Cursor {
         val db= this.readableDatabase
         var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PUNTUACIONES} ORDER BY $COLUMNA_PTS_MAX desc LIMIT 1", null)
         Log.e("$cursor", "valor del cursor que se le pasa a la consulta: $cursor")
-        cursor.moveToFirst()
-        return cursor.getInt(1)
+        cursor.moveToPosition(1)
+        return cursor
     }
 
 }

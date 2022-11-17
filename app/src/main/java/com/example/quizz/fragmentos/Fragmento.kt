@@ -12,7 +12,7 @@ import com.example.quizz.sqliteBD.MiBDOpenHelper
 
 class Fragmento : AppCompatActivity() {
 
-
+    private lateinit var preguntasDBHelper: MiBDOpenHelper
     private var binding: ActivityFragmentoBinding? = null
     private val fragmentoViewModel: FragmentoViewModel by viewModels()
 
@@ -35,10 +35,11 @@ class Fragmento : AppCompatActivity() {
             valor -> binding!!.textoPuntosMarcador?.setText(valor.toString())
 
         }
-
+        preguntasDBHelper.crearPuntuacionMax("10")
         fragmentoViewModel.getMarcador().observe(this, nameObserver)
         var puntosMax = preguntasBDHelper.obtenerPuntuacionMax()
-        binding!!.textoPuntuacionMax.text = puntosMax.toString()
+        var puntuacionMaxima:Int = puntosMax.getInt(0)
+        binding!!.textoPuntuacionMax.text = puntuacionMaxima.toString()
 
     }
 
