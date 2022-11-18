@@ -38,6 +38,8 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
             db!!.execSQL(crearTablaPreguntas)
             var crearTablaPuntos = "CREATE TABLE $TABLA_PUNTUACIONES ($COLUMNA_PTS_MAX TEXT)"
             db!!.execSQL(crearTablaPuntos)
+            var insert = "INSERT INTO $TABLA_PUNTUACIONES ($COLUMNA_PTS_MAX) VALUES ('1')"
+            db!!.execSQL(insert)
         } catch (e: SQLiteException) {
             Log.e("$TAG (onCreate)", e.message.toString())
         }
@@ -95,16 +97,18 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
 
         val db= this.readableDatabase
         var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PREGUNTAS} WHERE $COLUMNA_ID=$num", null)
-        Log.e("$cursor", "valor del cursor que se le pasa a la consulta: $cursor")
+        Log.e("$cursor", "valor del cursor que se le pasa a la consulta preguntas: $cursor")
         cursor.moveToFirst()
         return cursor
     }
 
     fun obtenerPuntuacionMax(): Cursor {
         val db= this.readableDatabase
+        var insert = "INSERT INTO $TABLA_PUNTUACIONES ($COLUMNA_PTS_MAX) VALUES ('1')"
+        db!!.execSQL(insert)
         var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PUNTUACIONES} ORDER BY $COLUMNA_PTS_MAX desc LIMIT 1", null)
-        Log.e("$cursor", "valor del cursor que se le pasa a la consulta: $cursor")
-        cursor.moveToPosition(1)
+        cursor.moveToFirst()
+        Log.e("$cursor", "valor del cursor que se le pasa a la consulta puntos: $cursor")
         return cursor
     }
 

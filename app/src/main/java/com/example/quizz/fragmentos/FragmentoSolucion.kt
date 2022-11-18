@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import com.example.quizz.databinding.FragmentFragmentoSolucionBinding
 import com.example.quizz.sqliteBD.MiBDOpenHelper
@@ -21,6 +20,7 @@ class FragmentoSolucion : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
     }
 
     override fun onCreateView(
@@ -30,6 +30,7 @@ class FragmentoSolucion : Fragment() {
 
         val fragmentoBinding = FragmentFragmentoSolucionBinding.inflate(inflater, container, false)
         binding = fragmentoBinding
+        preguntasDBHelper = MiBDOpenHelper(context, null)
 
         cargarDatosFin()
         comprobarPuntuacionMax()
@@ -38,7 +39,6 @@ class FragmentoSolucion : Fragment() {
     }
 
     private fun comprobarPuntuacionMax() {
-
         //compruebo la puntuacion maxima
         var puntuacionMax = preguntasDBHelper.obtenerPuntuacionMax()
         var puntuacionMaxima = puntuacionMax.getInt(0)
@@ -55,7 +55,7 @@ class FragmentoSolucion : Fragment() {
 
         binding?.textoAciertos?.text = fragmentoViewModel.aciertos.toString()
 
-        binding?.textoFallos?.text = (fragmentoViewModel.fallos - fragmentoViewModel.aciertos).toString()
+        binding?.textoFallos?.text = (fragmentoViewModel.fallos - fragmentoViewModel.aciertos+1).toString()
 
     }
 

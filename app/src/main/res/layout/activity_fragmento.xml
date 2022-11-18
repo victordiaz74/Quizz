@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cvPregunta"
         android:layout_width="344dp"
-        android:layout_height="111dp"
+        android:layout_height="211dp"
         android:layout_margin="10dp"
         app:cardBackgroundColor="#FFFF99"
         app:cardCornerRadius="20dp"

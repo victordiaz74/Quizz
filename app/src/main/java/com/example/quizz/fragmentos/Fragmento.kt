@@ -12,7 +12,7 @@ import com.example.quizz.sqliteBD.MiBDOpenHelper
 
 class Fragmento : AppCompatActivity() {
 
-    private lateinit var preguntasDBHelper: MiBDOpenHelper
+
     private var binding: ActivityFragmentoBinding? = null
     private val fragmentoViewModel: FragmentoViewModel by viewModels()
 
@@ -22,12 +22,12 @@ class Fragmento : AppCompatActivity() {
         setContentView(binding!!.root)
 
         //inicializo la base de datos para tener en el activity todo
-        val preguntasBDHelper = MiBDOpenHelper(this, null)
+        var preguntasDBHelper = MiBDOpenHelper(this, null)
         //le paso la base de datos
-        fragmentoViewModel.setDatabase(preguntasBDHelper)
+        fragmentoViewModel.setDatabase(preguntasDBHelper)
 
         //numero total de preguntas que hay en la base de datos
-        var cursor = preguntasBDHelper.obtenerPreguntas()
+        var cursor = preguntasDBHelper.obtenerPreguntas()
         fragmentoViewModel.setTotalPreguntas(cursor.count)
 
         val nameObserver = Observer<Int>{
@@ -35,9 +35,9 @@ class Fragmento : AppCompatActivity() {
             valor -> binding!!.textoPuntosMarcador?.setText(valor.toString())
 
         }
-        preguntasDBHelper.crearPuntuacionMax("10")
+
         fragmentoViewModel.getMarcador().observe(this, nameObserver)
-        var puntosMax = preguntasBDHelper.obtenerPuntuacionMax()
+        var puntosMax = preguntasDBHelper.obtenerPuntuacionMax()
         var puntuacionMaxima:Int = puntosMax.getInt(0)
         binding!!.textoPuntuacionMax.text = puntuacionMaxima.toString()
 
