@@ -64,7 +64,7 @@ class FragmentoRespuestas : Fragment() {
             mostrarFragmentoSolucion()
 
         }else{
-            if(fragmentoViewModel.getCorrecta() == true){
+            if(fragmentoViewModel.getCorrecta()){
                 fragmentoViewModel.setCorrecta(false)
                 mostrarFragmentoPreguntas()
             }else{
