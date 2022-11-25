@@ -18,7 +18,6 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
         val DATABASE_VERSION = 1
         val DATABASE_NAME = "preguntas_tabla.db"
         val TABLA_PREGUNTAS = "preguntas"
-        val TABLA_PUNTUACIONES = "puntuaciones"
         val COLUMNA_ID = "idPregunta"
         val COLUMNA_TEXTO = "textoPregunta"
         val COLUMNA_RESPUESTA1 = "textoRespuesta1"
@@ -26,6 +25,7 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
         val COLUMNA_RESPUESTA3 = "textoRespuesta3"
         val COLUMNA_RESPUESTA4 = "textoRespuesta4"
 
+        val TABLA_PUNTUACIONES = "puntuaciones"
         val COLUMNA_PTS_MAX = "puntuacionMax"
 
     }
