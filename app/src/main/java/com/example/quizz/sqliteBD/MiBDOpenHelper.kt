@@ -97,8 +97,16 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
 
         val db= this.readableDatabase
         var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PREGUNTAS} WHERE $COLUMNA_ID=$num", null)
-        Log.e("$cursor", "valor del cursor que se le pasa a la consulta preguntas: $cursor")
         cursor.moveToFirst()
+        return cursor
+    }
+
+    fun obtenerPreguntaRandom(): Cursor{
+        val db = this.readableDatabase
+        var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PREGUNTAS} ORDER BY RANDOM() LIMIT 1", null)
+        if (cursor.moveToFirst()) {
+            return cursor
+        }
         return cursor
     }
 
@@ -108,7 +116,6 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
         db!!.execSQL(insert)
         var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PUNTUACIONES} ORDER BY $COLUMNA_PTS_MAX desc LIMIT 1", null)
         cursor.moveToFirst()
-        Log.e("$cursor", "valor del cursor que se le pasa a la consulta puntos: $cursor")
         return cursor
     }
 

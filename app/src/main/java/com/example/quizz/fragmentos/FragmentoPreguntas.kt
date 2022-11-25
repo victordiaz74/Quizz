@@ -44,7 +44,7 @@ class FragmentoPreguntas : Fragment() {
     }
 
     private fun cargar() {
-        val pregunta = preguntasDBHelper.obtenerPreguntaId(fragmentoViewModel.getPreguntaActual().toString())
+        val pregunta = preguntasDBHelper.obtenerPreguntaRandom()
 
         binding?.textoPreguntas?.text = pregunta.getString(1)
 
