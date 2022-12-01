@@ -11,21 +11,26 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.quizz.MainActivity
 import com.example.quizz.SQLPreguntaListAdapter
 import com.example.quizz.R
+import com.example.quizz.databinding.ActivityListadoBinding
 
 class SQLListadoPreguntas: AppCompatActivity() {
 
     private lateinit var preguntasDBHelper: MiBDOpenHelper
     private lateinit var miSQLiteRecyclerViewAdapter: SQLPreguntaListAdapter
+    //para usar binding
+    private lateinit var binding: ActivityListadoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_listado)
+        //inicializamos el binding
+        binding = ActivityListadoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         preguntasDBHelper = MiBDOpenHelper(this, null)
 
 
         initRecyclerView()
-        val btnAddPregunta : Button = findViewById(R.id.btnAddPregunta1)
+        val btnAddPregunta : Button = binding.btnAddPregunta1
         btnAddPregunta.setOnClickListener(){
             btnAddPregunta()
         }
@@ -40,7 +45,7 @@ class SQLListadoPreguntas: AppCompatActivity() {
         miSQLiteRecyclerViewAdapter.SQLPreguntaListAdapter(this,cursor)
 
 
-        val rv = findViewById<RecyclerView>(R.id.listado)
+        val rv = binding.listado
 
         rv.setHasFixedSize(true)
         rv.layoutManager = LinearLayoutManager(this)
