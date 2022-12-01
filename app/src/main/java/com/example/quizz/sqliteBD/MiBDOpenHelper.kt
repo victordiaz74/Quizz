@@ -101,6 +101,7 @@ class MiBDOpenHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
         return cursor
     }
 
+    //funcion para hacer random las preguntas
     fun obtenerPreguntaRandom(): Cursor{
         val db = this.readableDatabase
         var cursor = db.rawQuery("SELECT * FROM ${MiBDOpenHelper.TABLA_PREGUNTAS} ORDER BY RANDOM() LIMIT 1", null)
